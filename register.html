@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - html JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body id="top">
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Ask<span>Hub</span></div>
+        <div class="subtitle">A place where you can find an answer to any question.</div>
+
+       <!--צקבוקס מוסתר-->
+       <input type="checkbox" id="menu-toggle">
+
+       <!--כפתור לפתיחת התפריט-->
+       <label for="menu-toggle" class="hamburger">
+        ☰
+       </label>
+
+        <nav class="menu">
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About</a>
+            <a id="login-link" href="login.html" class="login">Log In</a>
+            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1 class="site-title">Welcome to AskHub! Sign Up and be part of our community!</h1>
+    <div class="white-bubble">
+        <div class="steps">
+        <div id="step1-title" class="step active">1. Personal Details</div>
+        <div id="step2-title" class="step">2. Account Details</div>
+    </div>
+<div class="form-content">
+        <p>Already a member?
+        <a href="login.html">Log in</a>
+        </p>
+
+        <form id="register-form" class="form" novalidate>
+        <div class="form-section" id="step1">
+            <h3>Personal Information</h3>
+
+            <label>First name:
+                <input id="fname" type="text" name="fname" required placeholder="type here..." minlength="2" maxlength="60">
+                <span id="fname-error" class="error"></span>
+            </label>
+
+            <label>Last name:
+                <input id="lname" type="text" name="lname" required placeholder="type here..." minlength="2" maxlength="60">
+                <span id="lname-error" class="error"></span>
+            </label>
+
+            <label>Birth Date:
+                <input id="bday" type="date" name="bday" required>
+                <span id="bday-error" class="error"></span>
+            </label>
+
+            <label>City:
+                <input id="city" type="text" name="city" list="cities-list" required placeholder="type here...">
+                <datalist id="cities-list"></datalist>
+                <span id="city-error" class="error"></span>
+            </label>
+
+            <label>Street:
+                <input id="street" type="text" name="street" required placeholder="type here..." minlength="2" maxlength="60">
+                <span id="street-error" class="error"></span>
+            </label>
+
+            <label>Number:
+                <input id="street-no" type="number" name="street-no" required min="0" placeholder="type here...">
+                <span id="street-no-error" class="error"></span>
+            </label>
+            
+            <button type="button" id="continue-btn" class="continue-btn">Continue</button>
+
+        </div>
+
+        
+        <div class="form-section" id="step2">
+            <h3>Account Information</h3>
+
+            <label>Username:
+                <input id="username" type="text" name="username" required placeholder="example: PrettyOrange123" minlength="2" maxlength="60">
+                <span id="username-error" class="error"></span>
+            </label>
+
+            <label>Password:
+                <input id="password" type="password" name="password" required placeholder="type here..." minlength="7" maxlength="12">
+                <span id="password-error" class="error"></span>
+            </label>
+
+            <label>Confirm Password:
+                <input id="confirm-password" type="password" name="confirm-password" required placeholder="type here..." minlength="7" maxlength="12">
+                <span id="confirm-password-error" class="error"></span>
+            </label>
+
+            <label>Profile picture:
+                <input id="profile-pic" type="file" name="profile-pic" required accept=".jpg,.jpeg">
+                <span id="profile-pic-error" class="error"></span>
+            </label>      
+
+            <label>E-mail address:
+                <input id="mail" type="email" name="mail" required placeholder="example@mail.com">
+                <span id="mail-error" class="error"></span>
+            </label>
+
+            <div class="buttons-row">
+                <button type="button" id="back-btn" class="back-btn">Back</button>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </div>
+        </div>      
+        </form>
+    </div>
+    </div>
+</main>
+
+<footer id="form-section">
+    <p class="copyright">
+    © AskHub 2026</p>
+</footer>
+<script src="js/navbar.js"></script>
+<script src="js/user.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

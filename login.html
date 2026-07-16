@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - html JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body id="top">
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Ask<span>Hub</span></div>
+        <div class="subtitle">A place where you can find an answer to any question.</div>
+
+       <!--צקבוקס מוסתר-->
+       <input type="checkbox" id="menu-toggle">
+
+       <!--כפתור לפתיחת התפריט-->
+       <label for="menu-toggle" class="hamburger">
+        ☰
+       </label>
+
+        <nav class="menu">
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About</a>
+            <a id="login-link" href="login.html" class="login">Log In</a>
+            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1 class="site-title">Welcome back to AskHub!</h1>
+     <div class="white-bubble">
+        <h2>Log In</h2>
+        <p>
+           Not signed-up yet?
+           <a href="register.html">Sign up</a>
+        </p>
+        <form id="login-form" class="form">
+            <label>Username:
+                <input id="login-username" type="text" name="username" required placeholder="example: PrettyOrange123" minlength="2" maxlength="60">
+            </label>
+
+            <label>Password:
+                <input id="login-password" type="password" name="password" required placeholder="type here..." minlength="7" maxlength="12">
+                <div id="login-error" class="error"></div>
+            </label>
+            
+            <button type="submit" class="login-btn">Log In</button>
+        </form>
+    </div>
+</main>
+
+<footer id="form-section">
+    <p class="copyright">
+    © AskHub 2026</p>
+</footer>
+<script src="js/navbar.js"></script>
+<script src="js/user.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

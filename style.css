@@ -1,0 +1,657 @@
+/*פלטת צבעים מוכנים שיהיה לי מראש*/
+:root {
+    --royal-blue: #423ffdef;
+    --white: #ffffff;
+    --black: #000000;
+    --red: #ff4d4d;
+    --green: #09d1a6;
+    --dark-gray: #8c8d8d;
+    --light-gray: #cfd1d1;
+    --light-blue: #569affcb;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--white);
+    direction: ltr;
+}
+
+/*חלק עליון*/
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 1000;
+    border-bottom: 1px solid var(--light-gray);
+    margin: 0 auto;
+    padding: 2px;
+    direction: ltr;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px;
+    direction: ltr;
+}
+
+ /*המילה Ask*/
+.logo {
+    color: var(--royal-blue);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/*המילה Hub*/
+.logo span {
+    color: var(--black);
+}
+
+.subtitle {
+    color:var(--black);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*תפריט*/
+.menu a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/*כפתור התחברות*/
+.menu a.login {
+    color: var(--royal-blue);
+}
+
+/*כפתור הרשמה*/
+.menu a.signup {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.menu a:hover {
+    color: var(--light-gray);
+    transform: translateY(-4px) scale(1.1);
+}
+
+.site-title{
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*גריד*/
+.container {
+    max-width: 1270px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 12px 30px var(--light-gray);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.main-article {
+    grid-column: span 3;
+    background-color: var(--white);
+}
+
+.main-article img {
+    height: 220px;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h2 {
+    color: var(--black);
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+}
+
+.btn {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+
+/*אודות*/
+.about-strip {
+    background-color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.inner-about h2 {
+    color: var(--black);
+}
+
+.inner-about p {
+    text-align: justify;
+    line-height: 1.9;
+    font-size: 19px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*הרשמה לניוזלטר*/
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: var(--bg-home);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.white-bubble {
+    background-color: var(--white);
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.form-content {
+    padding: 30px 40px;
+}
+
+.white-bubble h2 {
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 25px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: var(--black);
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-family: inherit;
+}
+
+/*שגיאות*/
+.error {
+    display: block;
+    min-height: 14px;
+    color: var(--red);
+    font-size: 13px;
+    margin-top: 1px;
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+
+.invalid {
+    border: 2px solid var(--red);
+}
+
+.valid {
+    border: 2px solid var(--green);
+}
+
+
+.submit-btn,
+.back-btn,
+.continue-btn {
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 8px;
+    border-color: var(--light-gray);
+    padding: 12px;
+    margin-bottom: 3px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.submit-btn:hover,
+.back-btn:hover,
+.continue-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 5px 5px var(--dark-gray);
+}
+
+.continue-btn {
+    display: block;
+    margin-left: auto;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.back-btn,
+.submit-btn {
+    flex: 0 0 120px;
+}
+
+#step2 {
+    display: none;
+}
+
+.step {
+    background-color: var(--light-gray);
+    color: var(--black);
+    padding: 15px 20px;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+.active {
+    background-color: var(--royal-blue);
+    color:var(--white);
+}
+
+.steps {
+    display: flex;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid var(--light-gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.form-section {
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+.form-section.hide {
+    opacity: 0;
+}
+
+
+
+/*התחברות*/
+.login-btn {
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 8px;
+    border-color: var(--light-gray);
+    padding: 12px;
+    margin-bottom: 3px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+
+
+
+/*פרופיל*/
+.profile-card
+{
+    width: 420px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.profile-image
+{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--light-blue);
+    margin-bottom: 20px;
+}
+
+.profile-card h2
+{
+    margin-bottom: 10px;
+    color: #2b2b2b;
+}
+
+.profile-username
+{
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.profile-card p
+{
+    margin: 12px 0;
+    font-size: 17px;
+}
+
+
+
+
+/* --------------------------- Edit Profile Modal --------------------------- */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    z-index:1500;
+}
+
+.modal-content {
+
+    background: white;
+
+    width: 600px;
+
+    max-width: 85vw;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    position: relative;
+
+}
+
+.modal-body{
+
+    padding:30px;
+
+    overflow-y:auto;
+
+    max-height:90vh;
+
+}
+
+.close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    cursor: pointer;
+
+    font-size: 28px;
+}
+
+.modal-steps{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:20px 0;
+}
+
+.modal-steps button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#ececec;
+}
+
+.active-tab{
+
+    background:#1f6fff !important;
+
+    color:white;
+}
+
+.modal-content label{
+
+    display:block;
+
+    margin-bottom:15px;
+}
+
+.modal-content input{
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:5px;
+}
+
+.modal-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+
+/*חלק של לימוד עצמי
+input:focus {
+    outline: none;
+    border: 2px solid var(--purple-primary);
+}
+
+input:focus:invalid {
+    border: 2px solid var(--error);
+}
+
+input:valid:not(:placeholder-shown) {
+    border: 2px solid var(--success);
+}
+
+.radio-row, .check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.radio-row label {
+    flex-direction: row;
+    font-weight: normal;
+    margin-left: 10px;
+}*/
+
+
+
+
+
+/*צקבוקס מוסתר*/
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+.copyright {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/*התאמה למובייל לפי הדרישות בתרגיל*/
+@media (max-width: 800px) {
+
+    /* header */
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /*כפתור המבורגר שלושה קווים*/
+    .hamburger {
+        display: block;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /*תפריט צד*/
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 220px;
+        height: 100vh;
+        background-color: var(--purple-primary);
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        padding-right: 20px;
+        gap: 25px;
+        transition: right 0.3s ease;
+        z-index: 2000;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        right: 0;
+    }
+
+    .menu a {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .main-article {
+        grid-column: span 1;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .white-bubble {
+        width: 100%;
+        padding: 20px;
+    }
+}

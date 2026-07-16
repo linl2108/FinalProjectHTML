@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - html JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body id="top">
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Ask<span>Hub</span></div>
+        <div class="subtitle">A place where you can find an answer to any question.</div>
+
+       <!--צקבוקס מוסתר-->
+       <input type="checkbox" id="menu-toggle">
+
+       <!--כפתור לפתיחת התפריט-->
+       <label for="menu-toggle" class="hamburger">
+        ☰
+       </label>
+
+        <nav class="menu">
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About</a>
+            <a id="login-link" href="login.html" class="login">Log In</a>
+            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1 class="site-title">Welcome to AskHub!</h1>
+    <div class="grid-layout">      
+        <!--מאמר ראשי-->
+        <article class="card main-article">
+            <img src="https://tasteoffrancemag.com/wp-content/uploads/2025/02/shutterstock_2423130701-scaled.jpg" alt="יקבים">
+            <div class="card-content">
+                <h2>מאמר החודש: חמשת היקבים המומלצים לשנת 2026</h2>
+                <p>סיור בין הגבעות הירוקות, הגבינות המיושנות והיינות שזכו בתארים הבינלאומיים הגבוהים ביותר השנה.</p>
+                <a href="#" class="btn">קרא עוד</a>
+            </div>
+        </article>
+        
+        <!--מאמר 2: קינוחים סגולים-->
+        <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdO-d_kYrpwmOG8nm_Oo1D3cXcYjzcuINQ-Q&s" alt="קינוחים">
+            <div class="card-content">
+                <h2>הקינוחים הסגולים שכבשו את פריז</h2>
+                <p>ממקרון לבנדר ועד קרם אוכמניות - הטרנד הסגול בשיאו.</p>
+                <a href="#" class="btn">קרא עוד</a>
+            </div>
+        </article>
+
+        <!--מאמר 3: המבורגרס-->
+        <article class="card">
+            <img src="https://kobiedri.co.il/wp-content/uploads/2024/09/IMG_0032-10.jpg" alt="המבורגר">
+            <div class="card-content">
+                <h2>ההמבורגרים המומלצים ביותר לשנת 2026</h2>
+                <p>ההמבורגרים שחובה לנסות השנה לפי דירוג המבקרים.</p>
+                <a href="#" class="btn">קרא עוד</a>
+            </div>
+        </article>
+
+        <!--מאמר 4: פסטה-->
+        <article class="card">
+            <img src="https://maimongroup.co.il/wp-content/uploads/2025/08/%D7%A4%D7%98%D7%95%D7%A6%D7%99%D7%A0%D7%99-%D7%AA%D7%A8%D7%93-%D7%A4%D7%98%D7%A8%D7%99%D7%95%D7%AA-%D7%95%D7%A9%D7%9E%D7%A0%D7%AA.jpg" alt="פסטה">
+            <div class="card-content">
+                <h2>מדריך לפסטה בשמנת פטריות</h2>
+                <p>מדריך קל ופשוט להכנת מנה איטלקית קלאסית אצלכם במטבח.</p>
+                <a href="#" class="btn">קרא עוד</a>
+            </div>
+        </article>
+
+        <!--מאמר 5: היבה יוסי שטרית-->
+        <article class="card">
+            <img src="https://hungryparis.com/wp-content/uploads/2022/12/318791356_687440199724669_7890385769118981096_n-1024x768.jpg" alt="שף יוסי">
+            <div class="card-content">
+                <h2>ראיון בלעדי עם השף יוסי שטרית</h2>
+                <p>הצצה אל מאחורי הקלעים של מסעדת היבה היוקרתית.</p>
+                <a href="#" class="btn">קרא עוד</a>
+            </div>
+        </article>
+
+        <!--מאמר 6: שווארמה-->
+        <article class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn54LryjG3MNIOIskVXW60TSadhxC5EGrFEA&s" alt="שווארמה">
+            <div class="card-content">
+                <h2>אחת ולתמיד - מי השווארמה הכי טובה בארץ?</h2>
+                <p>יצאנו לבדוק את המקומות המפורסמים וחזרנו עם תשובה טעימה.</p>
+                <a href="#" class="btn">קרא עוד</a>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<footer id="form-section">
+    <p class="copyright">
+    © AskHub 2026</p>
+</footer>
+<script src="js/navbar.js"></script>
+</body>
+</html>

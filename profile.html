@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - html JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body id="top">
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Ask<span>Hub</span></div>
+        <div class="subtitle">A place where you can find an answer to any question.</div>
+
+       <!--צקבוקס מוסתר-->
+       <input type="checkbox" id="menu-toggle">
+
+       <!--כפתור לפתיחת התפריט-->
+       <label for="menu-toggle" class="hamburger">
+        ☰
+       </label>
+
+        <nav class="menu">
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About</a>
+            <a id="login-link" href="login.html" class="login">Log In</a>
+            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1 class="site-title">Hey firstname, welcome back!</h1>
+        <div class="white-bubble profile-card">
+
+            <img id="profile-image" class="profile-image">
+
+            <h2 id="profile-name"></h2>
+
+            <p id="profile-username" class="profile-username"></p>
+
+            <p id="profile-email"></p>
+
+            <p id="profile-bday"></p>
+
+            <p id="profile-address"></p>
+
+            <p id="numOfAdvice">Advices given: </p>
+
+            <p id="numOfQues">Questions asked: </p>
+
+            <div class="profile-buttons">
+                <button id="edit-profile-btn" type="button">Edit Profile</button>
+                <button type="button"">Game</button>
+                <button type="button">Logout</button>
+            </div>
+
+    </div>
+
+</main>
+
+
+<!-- --------------------------- Edit Profile Modal --------------------------- -->
+
+<div id="edit-profile-modal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="close-modal" class="close">&times;</span>
+
+        <h2>Edit Profile</h2>
+
+        <div class="modal-steps">
+
+            <button id="account-tab" class="active-tab" type="button">
+                Edit Account Info
+            </button>
+
+            <button id="personal-tab" type="button">
+                Edit Personal Details
+            </button>
+
+        </div>
+
+
+        <!-- --------------------------- שלב 1 --------------------------- -->
+
+        <div id="account-section">
+
+            <label>
+                Username
+                <input type="text" id="edit-username">
+            </label>
+
+            <label>
+                Profile Picture
+                <input type="file" id="edit-profile-pic">
+            </label>
+
+            <label>
+                Email
+                <input type="email" id="edit-mail">
+            </label>
+
+            <label>
+                Password
+                <input type="password" id="edit-password">
+            </label>
+
+            <label>
+                Confirm Password
+                <input type="password" id="edit-confirm-password">
+            </label>
+
+        </div>
+
+
+        <!-- --------------------------- שלב 2 --------------------------- -->
+
+        <div id="personal-section" style="display:none;">
+
+            <label>
+                First Name
+                <input type="text" id="edit-fname">
+            </label>
+
+            <label>
+                Last Name
+                <input type="text" id="edit-lname">
+            </label>
+
+            <label>
+                Birth Date
+                <input type="date" id="edit-bday">
+            </label>
+
+            <label>
+                City
+                <input type="text" id="edit-city">
+            </label>
+
+            <label>
+                Street
+                <input type="text" id="edit-street">
+            </label>
+
+            <label>
+                Street Number
+                <input type="number" id="edit-street-no">
+            </label>
+
+        </div>
+
+        <div class="modal-buttons">
+
+            <button id="cancel-edit" type="button">
+                Cancel
+            </button>
+
+            <button id="save-edit" type="button">
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer id="form-section">
+    <p class="copyright">
+    © AskHub 2026</p>
+</footer>
+<script src="js/navbar.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/editprofile.js"></script>
+</body>
+</html>
