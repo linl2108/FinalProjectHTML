@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project - html JavaScript</title>
     <link rel="stylesheet" href="style.css">
-</head> 
+</head>
+
 <body id="top">
 
 <header>
@@ -32,32 +33,22 @@
 
 <main class="container">
     <h1 class="site-title">Hey Admin, welcome back!</h1>
-        <div class="white-bubble admiin-card">
-        <table id="users-table">
-
-        <thead>
-
-            <tr>
-                <th>Picture</th>
+    <div class="white-bubble admin-card">
+        <table id="users-table" class="admin-table">
+            <thead>
+                <tr>
+                <th>Profile Picture</th>
                 <th>Username</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Full Name</th>
                 <th>Email</th>
                 <th>Birth Date</th>
-                <th>City</th>
-                <th>Street</th>
-                <th>Number</th>
+                <th>Address</th>
                 <th>Actions</th>
-            </tr>
-
-        </thead>
-
-        <tbody id="users-body">
-
-        </tbody>
-
-    </table>
-
+                </tr>
+            </thead>
+            <tbody id="users-body"></tbody>
+        </table>
+    </div>
 </main>
 
 
@@ -168,11 +159,36 @@
 
 </div>
 
+<!-- Delete User Modal -->
+
+<div id="delete-modal" class="modal">
+
+    <div class="delete-modal-content">
+
+        <h3>Are you sure you want to delete this user?</h3>
+
+        <div class="delete-buttons">
+
+            <button id="confirm-delete" type="button">
+                Yes
+            </button>
+
+            <button id="cancel-delete" type="button">
+                No
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 <footer id="form-section">
     <p class="copyright">
     © AskHub 2026</p>
 </footer>
 <script src="js/navbar.js"></script>
+<script src="js/validation.js"></script>
 <script src="js/admin.js"></script>
 </body>
 </html>

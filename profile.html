@@ -90,27 +90,32 @@
 
             <label>
                 Username
-                <input type="text" id="edit-username">
+                <input type="text" id="username">
+                <span id="username-error" class="error"></span>
             </label>
 
             <label>
                 Profile Picture
-                <input type="file" id="edit-profile-pic">
+                <input type="file" id="profile-pic">
+                <span id="profile-pic-error" class="error"></span>
             </label>
 
             <label>
                 Email
-                <input type="email" id="edit-mail">
+                <input type="email" id="mail">
+                <span id="mail-error" class="error"></span>
             </label>
 
             <label>
                 Password
-                <input type="password" id="edit-password">
+                <input type="password" id="password">
+                <span id="password-error" class="error"></span>
             </label>
 
             <label>
                 Confirm Password
-                <input type="password" id="edit-confirm-password">
+                <input type="password" id="confirm-password">
+                <span id="confirm-password-error" class="error"></span>
             </label>
 
         </div>
@@ -122,32 +127,39 @@
 
             <label>
                 First Name
-                <input type="text" id="edit-fname">
+                <input type="text" id="fname">
+                <span id="fname-error" class="error"></span>
             </label>
 
             <label>
                 Last Name
-                <input type="text" id="edit-lname">
+                <input type="text" id="lname">
+                <span id="lname-error" class="error"></span>
             </label>
 
             <label>
                 Birth Date
-                <input type="date" id="edit-bday">
+                <input type="date" id="bday">
+                <span id="bday-error" class="error"></span>
             </label>
 
             <label>
                 City
-                <input type="text" id="edit-city">
+                <input type="text" id="city" list="cities-list">
+                <datalist id="cities-list"></datalist>
+                <span id="city-error" class="error"></span>
             </label>
 
             <label>
                 Street
-                <input type="text" id="edit-street">
+                <input type="text" id="street">
+                <span id="street-error" class="error"></span>
             </label>
 
             <label>
                 Street Number
-                <input type="number" id="edit-street-no">
+                <input type="number" id="street-no">
+                <span id="street-no-error" class="error"></span>
             </label>
 
         </div>
@@ -174,6 +186,7 @@
 </footer>
 <script src="js/navbar.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/validation.js"></script>
 <script src="js/editprofile.js"></script>
 </body>
 </html>

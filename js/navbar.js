@@ -23,3 +23,28 @@ if (currentUser)
 
     });
 }
+
+// --------------------------- מנהל ---------------------------
+
+if (sessionStorage.getItem("isAdmin") === "true")
+{
+    const loginLink = document.getElementById("login-link");
+    const signupLink = document.getElementById("signup-link");
+
+    loginLink.textContent = "Manage Users";
+    loginLink.href = "admin.html";
+
+    signupLink.textContent = "Log Out";
+    signupLink.href = "#";
+
+    signupLink.addEventListener("click", function(event){
+
+        event.preventDefault();
+
+        sessionStorage.removeItem("isAdmin");
+        sessionStorage.removeItem("currentUser");
+
+        window.location.href = "index.html";
+
+    });
+}

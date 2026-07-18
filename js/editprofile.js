@@ -8,25 +8,25 @@ function fillForm(){
 
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
-    document.getElementById("edit-username").value = user.username;
+    document.getElementById("username").value = user.username;
 
-    document.getElementById("edit-mail").value = user.mail;
+    document.getElementById("mail").value = user.mail;
 
-    document.getElementById("edit-password").value = user.password;
+    document.getElementById("password").value = user.password;
 
-    document.getElementById("edit-confirm-password").value = user.password;
+    document.getElementById("confirm-password").value = user.password;
 
-    document.getElementById("edit-fname").value = user.fname;
+    document.getElementById("fname").value = user.fname;
 
-    document.getElementById("edit-lname").value = user.lname;
+    document.getElementById("lname").value = user.lname;
 
-    document.getElementById("edit-bday").value = user.bday;
+    document.getElementById("bday").value = user.bday;
 
-    document.getElementById("edit-city").value = user.city;
+    document.getElementById("city").value = user.city;
 
-    document.getElementById("edit-street").value = user.street;
+    document.getElementById("street").value = user.street;
 
-    document.getElementById("edit-street-no").value = user.streetNo;
+    document.getElementById("street-no").value = user.streetNo;
 
 }
 
@@ -131,7 +131,41 @@ const saveBtn = document.getElementById("save-edit");
 
 saveBtn.addEventListener("click", function () {
 
-    updateUser();
+    let valid = true;
+
+    if (!checkRequired("username", "Username is required")) valid = false;
+    if (!checkRequired("password", "Password is required")) valid = false;
+    if (!checkRequired("confirm-password", "Password confirmation is required")) valid = false;
+    if (!checkRequired("mail", "Email is required")) valid = false;
+    if (!checkRequired("fname", "First name is required")) valid = false;
+    if (!checkRequired("lname", "Last name is required")) valid = false;
+    if (!checkRequired("bday", "Birth date is required")) valid = false;
+    if (!checkRequired("city", "City is required")) valid = false;
+    if (!checkRequired("street", "Street is required")) valid = false;
+    if (!checkRequired("street-no", "Street number is required")) valid = false;
+
+    const fields = [
+        usernameInput,
+        passwordInput,
+        confirmPasswordInput,
+        mailInput,
+        fnameInput,
+        lnameInput,
+        bdayInput,
+        cityInput,
+        streetInput,
+        streetNoInput
+    ];
+
+    fields.forEach(function(field) {
+        if (!field.classList.contains("valid")) {
+            valid = false;
+        }
+    });
+
+    if (valid) {
+        updateUser();
+    }
 
 });
 
