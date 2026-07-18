@@ -2,8 +2,7 @@
 
 function loadProfile() {
 
-    const loggedUser = JSON.parse(localStorage.getItem("currentUser"));
-
+    const loggedUser = JSON.parse(sessionStorage.getItem("currentUser"));
     if (!loggedUser)
     {
         window.location.href = "login.html";
@@ -27,8 +26,8 @@ function loadProfile() {
     loggedUser.street + " " +
     loggedUser.streetNo;
 
-    document.getElementById("profile-image").src =
-    "images/" + loggedUser.profilePic;
+    document.getElementById("profile-image").src = loggedUser.profilePic;
+    
 }
 
 loadProfile();

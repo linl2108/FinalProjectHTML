@@ -6,7 +6,7 @@ const modal = document.getElementById("edit-profile-modal");
 
 function fillForm(){
 
-    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
     document.getElementById("edit-username").value = user.username;
 
@@ -102,7 +102,7 @@ personalTab.addEventListener("click", function () {
 
 const saveBtn = document.getElementById("save-edit");
 
-saveBtn.addEventListener("click", function(){
+/*saveBtn.addEventListener("click", function(){
 
     const user = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -126,7 +126,7 @@ saveBtn.addEventListener("click", function(){
 
     localStorage.setItem("currentUser", JSON.stringify(user));
 
-});
+});*/
 
 
 saveBtn.addEventListener("click", function () {
@@ -140,7 +140,7 @@ function updateUser() {
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
     const updatedUser = {
 
@@ -158,28 +158,50 @@ function updateUser() {
 
     };
 
-    // אם המשתמש בחר תמונה חדשה
-    const image = document.getElementById("edit-profile-pic").files[0];
-
-    if (image)
-    {
-        updatedUser.profilePic = image.name;
-    }
-
     const index = users.findIndex(function(user){
 
         return user.username === currentUser.username;
 
     });
 
-    users[index] = updatedUser;
+    const image = document.getElementById("edit-profile-pic").files[0];
 
-    localStorage.setItem("users", JSON.stringify(users));
+    if (image) {
 
-    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        const reader = new FileReader();
 
-    loadProfile();
+        reader.onload = function () {
 
-    modal.style.display = "none";
+            updatedUser.profilePic = reader.result;
+
+            users[index] = updatedUser;
+
+            localStorage.setItem("users", JSON.stringify(users));
+
+            sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+            loadProfile();
+
+            modal.style.display = "none";
+
+        };
+
+        reader.readAsDataURL(image);
+
+    }
+
+    else {
+
+        users[index] = updatedUser;
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+        loadProfile();
+
+        modal.style.display = "none";
+
+    }
 
 }

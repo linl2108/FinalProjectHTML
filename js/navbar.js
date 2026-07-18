@@ -1,6 +1,6 @@
 // --------------------------- תפריט לפי משתמש מחובר ---------------------------
 
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
 if (currentUser)
 {
@@ -17,8 +17,8 @@ if (currentUser)
 
         event.preventDefault();
 
-        localStorage.removeItem("currentUser");
-
+        sessionStorage.removeItem("currentUser");
+        
         window.location.href = "index.html";
 
     });

@@ -23,6 +23,25 @@ class User {
 
 function createUser() {
 
+    return new User(
+
+        document.getElementById("username").value,
+        document.getElementById("password").value,
+        "", // התמונה תישמר אחר כך ע"י FileReader
+        document.getElementById("fname").value,
+        document.getElementById("lname").value,
+        document.getElementById("mail").value,
+        document.getElementById("bday").value,
+        document.getElementById("city").value,
+        document.getElementById("street").value,
+        document.getElementById("street-no").value
+
+    );
+
+}
+
+/*function createUser() {
+
     const newUser = new User(
 
         document.getElementById("username").value,
@@ -37,7 +56,7 @@ function createUser() {
         document.getElementById("street-no").value
     );
     return newUser;
-}
+}*/
 
 
 // --------------------------- בדיקת שם משתמש אם קיים/לא קיים במערכת ---------------------------
@@ -97,11 +116,23 @@ function saveUser() {
 
     const newUser = createUser();
 
-    users.push(newUser);
+    const image = document.getElementById("profile-pic").files[0];
 
-    localStorage.setItem("users", JSON.stringify(users));
+    const reader = new FileReader();
 
-    window.location.href = "login.html";
+    reader.onload = function () {
+
+        newUser.profilePic = reader.result;
+
+        users.push(newUser);
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        window.location.href = "login.html";
+
+    };
+
+    reader.readAsDataURL(image);
 
 }
 

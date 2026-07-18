@@ -10,6 +10,17 @@ loginForm.addEventListener("submit", function (event) {
     const username = document.getElementById("login-username").value;
     const password = document.getElementById("login-password").value;
 
+    // --------------------------- התחברות מנהל ---------------------------
+
+    if (username === "admin" && password === "admin1234admin")
+    {
+        sessionStorage.setItem("isAdmin", "true");
+
+        window.location.href = "admin.html";
+
+        return;
+    }
+
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
 
@@ -28,7 +39,7 @@ loginForm.addEventListener("submit", function (event) {
         return;
     }
 
-    localStorage.setItem("currentUser", JSON.stringify(user));
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
 
     window.location.href = "index.html";
 
