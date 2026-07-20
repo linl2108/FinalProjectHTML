@@ -4,6 +4,7 @@ if (sessionStorage.getItem("isAdmin") !== "true")
 {
     window.location.href = "login.html";
 }
+document.getElementById("username").dispatchEvent(new Event("input"));
 
 
 // --------------------------- משתנים ---------------------------
@@ -25,7 +26,6 @@ loadUsers();
 
 function loadUsers()
 {
-
     users = JSON.parse(localStorage.getItem("users")) || [];
 
     const tbody = document.getElementById("users-body");
@@ -84,58 +84,72 @@ function editUser(index)
 
     selectedUserIndex = index;
 
+    sessionStorage.setItem("editingAdminUser", index);
+
     const user = users[index];
 
-    document.getElementById("edit-username").value = user.username;
+    document.getElementById("username").value = user.username;
 
-    document.getElementById("edit-mail").value = user.mail;
+    document.getElementById("mail").value = user.mail;
 
-    document.getElementById("edit-password").value = user.password;
+    document.getElementById("password").value = user.password;
 
-    document.getElementById("edit-confirm-password").value = user.password;
+    document.getElementById("confirm-password").value = user.password;
 
-    document.getElementById("edit-fname").value = user.fname;
+    document.getElementById("fname").value = user.fname;
 
-    document.getElementById("edit-lname").value = user.lname;
+    document.getElementById("lname").value = user.lname;
 
-    document.getElementById("edit-bday").value = user.bday;
+    document.getElementById("bday").value = user.bday;
 
-    document.getElementById("edit-city").value = user.city;
+    document.getElementById("city").value = user.city;
 
-    document.getElementById("edit-street").value = user.street;
+    document.getElementById("street").value = user.street;
 
-    document.getElementById("edit-street-no").value = user.streetNo;
+    document.getElementById("street-no").value = user.streetNo;
 
     editModal.style.display = "flex";
+
+    document.getElementById("username").dispatchEvent(new Event("input"));
+document.getElementById("mail").dispatchEvent(new Event("input"));
+document.getElementById("password").dispatchEvent(new Event("input"));
+document.getElementById("confirm-password").dispatchEvent(new Event("input"));
+document.getElementById("fname").dispatchEvent(new Event("input"));
+document.getElementById("lname").dispatchEvent(new Event("input"));
+document.getElementById("bday").dispatchEvent(new Event("change"));
+document.getElementById("city").dispatchEvent(new Event("input"));
+document.getElementById("street").dispatchEvent(new Event("input"));
+document.getElementById("street-no").dispatchEvent(new Event("input"));
+
 
 }
 
 
-// --------------------------- שמירת עריכה ---------------------------
+/*// --------------------------- שמירת עריכה ---------------------------
 
 document.getElementById("save-edit").addEventListener("click",function(){
 
     const user = users[selectedUserIndex];
 
-    user.username = document.getElementById("edit-username").value;
+    user.username = document.getElementById("username").value;
 
-    user.mail = document.getElementById("edit-mail").value;
+    user.mail = document.getElementById("mail").value;
 
-    user.password = document.getElementById("edit-password").value;
+    user.password = document.getElementById("password").value;
 
-    user.fname = document.getElementById("edit-fname").value;
+    user.fname = document.getElementById("fname").value;
 
-    user.lname = document.getElementById("edit-lname").value;
+    user.lname = document.getElementById("lname").value;
 
-    user.bday = document.getElementById("edit-bday").value;
+    user.bday = document.getElementById("bday").value;
 
-    user.city = document.getElementById("edit-city").value;
+    user.city = document.getElementById("city").value;
 
-    user.street = document.getElementById("edit-street").value;
+    user.street = document.getElementById("street").value;
 
-    user.streetNo = document.getElementById("edit-street-no").value;
+    user.streetNo = document.getElementById("street-no").value;
 
-    const image = document.getElementById("edit-profile-pic").files[0];
+    const image = document.getElementById("profile-pic").files[0];
 
     if(image)
     {
@@ -168,7 +182,7 @@ document.getElementById("save-edit").addEventListener("click",function(){
 
     }
 
-});
+});*/
 
 
 // --------------------------- פתיחת חלון מחיקה ---------------------------

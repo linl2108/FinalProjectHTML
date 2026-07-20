@@ -25,12 +25,12 @@ function createUser() {
 
     return new User(
 
-        document.getElementById("username").value,
+        document.getElementById("username").value.trim().toLowerCase(),
         document.getElementById("password").value,
         "", // התמונה תישמר אחר כך ע"י FileReader
         document.getElementById("fname").value,
         document.getElementById("lname").value,
-        document.getElementById("mail").value,
+        document.getElementById("mail").value.trim().toLowerCase(),
         document.getElementById("bday").value,
         document.getElementById("city").value,
         document.getElementById("street").value,
@@ -63,17 +63,39 @@ function createUser() {
 
 function usernameExists(username) {
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser;
 
-    for (let user of users) {
+    const editingAdminUser = sessionStorage.getItem("editingAdminUser");
 
-        if (user.username === username) {
-            return true;
+    if (editingAdminUser !== null)
+    {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    currentUser = users[editingAdminUser];
+    }
+    else
+{
+    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+}
+
+    username = username.trim().toLowerCase();
+
+    return users.some(function (user) {
+
+        const sameUsername =
+            user.username.trim().toLowerCase() === username;
+
+        // בעריכת פרופיל מתעלמים מהמשתמש שמחובר כרגע
+        if (
+            currentUser &&
+            user.username.trim().toLowerCase() ===
+            currentUser.username.trim().toLowerCase()
+        ) {
+            return false;
         }
 
-    }
-
-    return false;
+        return sameUsername;
+    });
 }
 
 
@@ -81,18 +103,39 @@ function usernameExists(username) {
 
 function emailExists(mail) {
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser;
 
-    for (let user of users) {
+const editingAdminUser = sessionStorage.getItem("editingAdminUser");
 
-        if (user.mail === mail) {
-            return true;
+if (editingAdminUser !== null)
+{
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    currentUser = users[editingAdminUser];
+}
+else
+{
+    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+}
+
+    mail = mail.trim().toLowerCase();
+
+    return users.some(function (user) {
+
+        const sameEmail =
+            user.mail.trim().toLowerCase() === mail;
+
+        // בעריכת פרופיל מתעלמים מהמשתמש שמחובר כרגע
+        if (
+            currentUser &&
+            user.mail.trim().toLowerCase() ===
+            currentUser.mail.trim().toLowerCase()
+        ) {
+            return false;
         }
 
-    }
-
-    return false;
-
+        return sameEmail;
+    });
 }
 
 

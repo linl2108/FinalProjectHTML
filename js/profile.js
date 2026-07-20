@@ -31,3 +31,9 @@ function loadProfile() {
 }
 
 loadProfile();
+
+const gameBtn = document.getElementById("game-btn");
+
+gameBtn.addEventListener("click", function () {
+    window.open("game.html", "_blank");
+});

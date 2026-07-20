@@ -4,6 +4,7 @@
 const editBtn = document.getElementById("edit-profile-btn");
 const modal = document.getElementById("edit-profile-modal");
 
+
 function fillForm(){
 
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
@@ -27,6 +28,17 @@ function fillForm(){
     document.getElementById("street").value = user.street;
 
     document.getElementById("street-no").value = user.streetNo;
+
+    document.getElementById("username").dispatchEvent(new Event("input"));
+document.getElementById("mail").dispatchEvent(new Event("input"));
+document.getElementById("password").dispatchEvent(new Event("input"));
+document.getElementById("confirm-password").dispatchEvent(new Event("input"));
+document.getElementById("fname").dispatchEvent(new Event("input"));
+document.getElementById("lname").dispatchEvent(new Event("input"));
+document.getElementById("bday").dispatchEvent(new Event("change"));
+document.getElementById("city").dispatchEvent(new Event("input"));
+document.getElementById("street").dispatchEvent(new Event("input"));
+document.getElementById("street-no").dispatchEvent(new Event("input"));
 
 }
 
@@ -180,25 +192,25 @@ function updateUser() {
 
         ...currentUser,
 
-        username: document.getElementById("edit-username").value,
-        mail: document.getElementById("edit-mail").value,
-        password: document.getElementById("edit-password").value,
-        fname: document.getElementById("edit-fname").value,
-        lname: document.getElementById("edit-lname").value,
-        bday: document.getElementById("edit-bday").value,
-        city: document.getElementById("edit-city").value,
-        street: document.getElementById("edit-street").value,
-        streetNo: document.getElementById("edit-street-no").value
+        username: document.getElementById("username").value,
+        mail: document.getElementById("mail").value,
+        password: document.getElementById("password").value,
+        fname: document.getElementById("fname").value,
+        lname: document.getElementById("lname").value,
+        bday: document.getElementById("bday").value,
+        city: document.getElementById("city").value,
+        street: document.getElementById("street").value,
+        streetNo: document.getElementById("street-no").value
 
     };
 
     const index = users.findIndex(function(user){
 
-        return user.username === currentUser.username;
+    return user.username.toLowerCase() === currentUser.username.toLowerCase();
 
-    });
+});
 
-    const image = document.getElementById("edit-profile-pic").files[0];
+    const image = document.getElementById("profile-pic").files[0];
 
     if (image) {
 

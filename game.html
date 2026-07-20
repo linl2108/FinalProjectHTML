@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+
+    <link rel="stylesheet" href="SCSS/game.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Panel -->
+    <aside class="settings">
+
+        <h2>BOARD SIZE</h2>
+        <div class="board-sizes">
+
+            <label>
+                <input type="radio" name="boardSize" value="10">10 X 10
+            </label>
+
+            <label>
+                <input type="radio" name="boardSize" value="11">11 X 11
+            </label>
+
+            <label>
+                <input type="radio" name="boardSize" value="12">12 X 12
+            </label>
+
+            <label>
+                <input type="radio" name="boardSize" value="13">13 X 13
+            </label>
+
+            <label>
+                <input type="radio" name="boardSize" value="14">14 X 14
+            </label>
+
+            <label>
+                <input type="radio" name="boardSize" value="15">15 X 15
+            </label>
+
+        </div>
+
+        <h2>BATTLESHIPS</h2>
+        <div class="ship-inputs-container">
+        <div class="ship-input">
+            <label>Battleship Size 2</label>
+            <input type="number" id="ship2" min="0" step="1" value="0">
+        </div>
+
+        <div class="ship-input">
+            <label>Battleship Size 3</label>
+            <input type="number" id="ship3" min="0" step="1" value="0">
+        </div>
+
+        <div class="ship-input">
+            <label>Battleship Size 4</label>
+            <input type="number" id="ship4" min="0" step="1" value="0">
+        </div>
+
+        <div class="ship-input">
+            <label>Battleship Size 5</label>
+            <input type="number" id="ship5" min="0" step="1" value="0">
+        </div>
+        </div>
+
+        <button id="start-btn">START GAME</button>
+
+        <button id="reset-btn">RESET GAME</button>
+
+        <p id="message"></p>
+
+    </aside>
+
+    <!-- Game Area -->
+    <main class="game-section">
+        <div
+            id="board"
+            class="board hidden">
+        </div>
+    </main>
+
+    <!-- Right Panel -->
+    <aside class="ships-left">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Sub Type</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Size 2</td>
+                <td id="left2">0</td>
+            </tr>
+
+            <tr>
+                <td>Size 3</td>
+                <td id="left3">0</td>
+            </tr>
+
+            <tr>
+                <td>Size 4</td>
+                <td id="left4">0</td>
+            </tr>
+
+            <tr>
+                <td>Size 5</td>
+                <td id="left5">0</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </aside>
+</div>
+
+
+<!-- BOOM Animation -->
+<div id="boom" class="boom hidden">BOOM!</div>
+
+<!-- Sound -->
+<audio id="boomSound">
+    <source src="audio/boom.mp3" type="audio/mpeg">
+</audio>
+
+<script src="js/ships.js"></script>
+<script src="js/board.js"></script>
+<script src="js/game.js"></script>
+
+</body>
+</html>

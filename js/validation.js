@@ -12,10 +12,7 @@ usernameInput.addEventListener("input", function () {
     usernameError.textContent = "";
     usernameInput.classList.remove("invalid", "valid");
 
-    if (username === "")
-    {
-        return;
-    }
+    if (username === "") { return; }
 
     if (!usernameRegex.test(username))
     {
@@ -42,7 +39,7 @@ usernameInput.addEventListener("input", function () {
 const passwordInput = document.getElementById("password");
 const passwordError = document.getElementById("password-error");
 
-const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-]).{7,12}$/;
+const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-])[^\s]{7,12}$/;
 
 passwordInput.addEventListener("input", function () {
 
@@ -88,10 +85,7 @@ function checkConfirmPassword()
     confirmPasswordError.textContent = "";
     confirmPasswordInput.classList.remove("invalid", "valid");
 
-    if (confirmPassword === "")
-    {
-        return;
-    }
+    if (confirmPassword === "") { return; }
 
     if (password !== confirmPassword)
     {
