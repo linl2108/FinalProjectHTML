@@ -1,4 +1,8 @@
-
+setupPasswordToggle(
+    "password",
+    "eye-open",
+    "eye-closed"
+);
 // --------------------------- כפתור המשך ---------------------------
 
 const continueBtn = document.getElementById("continue-btn");

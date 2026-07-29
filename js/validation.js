@@ -1,6 +1,5 @@
 
 // --------------------------- בדיקה לשם משתמש ---------------------------
-
 const usernameInput = document.getElementById("username");
 const usernameError = document.getElementById("username-error");
 const usernameRegex = /^[A-Za-z0-9!@#$%^&*()_+\-]+$/;
@@ -22,7 +21,7 @@ usernameInput.addEventListener("input", function () {
 
     else if (usernameExists(username))
     {
-        usernameError.textContent = "This username already exists in the system.";
+        usernameError.textContent = "This username is already exists in the system.";
         usernameInput.classList.add("invalid");
     }
 
@@ -32,10 +31,7 @@ usernameInput.addEventListener("input", function () {
     }
 });
 
-
-
 // ---------------------------  בדיקה לסיסמא --------------------------- 
-
 const passwordInput = document.getElementById("password");
 const passwordError = document.getElementById("password-error");
 
@@ -70,10 +66,7 @@ passwordInput.addEventListener("input", function () {
     checkConfirmPassword();
 });
 
-
-
 // --------------------------- אימות סיסמא --------------------------- 
-
 const confirmPasswordInput = document.getElementById("confirm-password");
 const confirmPasswordError = document.getElementById("confirm-password-error");
 
@@ -99,7 +92,6 @@ function checkConfirmPassword()
     }
 }
 
-
 // --------------------------- בדיקה כשמשנים את אימות הסיסמה ---------------------------
 confirmPasswordInput.addEventListener("input", checkConfirmPassword);
 
@@ -107,10 +99,7 @@ const profilePicInput = document.getElementById("profile-pic");
 const profilePicError = document.getElementById("profile-pic-error");
 const form = document.getElementById("register-form");
 
-
-
 // --------------------------- בדיקה כאשר בוחרים קובץ --------------------------- 
-
 profilePicInput.addEventListener("change", function () {
 
     profilePicError.textContent = "";
@@ -137,9 +126,7 @@ profilePicInput.addEventListener("change", function () {
     }
 });
 
-
 // --------------------------- בדיקת שם פרטי --------------------------- 
-
 const fnameInput = document.getElementById("fname");
 const fnameError = document.getElementById("fname-error");
 
@@ -169,9 +156,7 @@ fnameInput.addEventListener("input", function ()
     }
 });
 
-
 // --------------------------- בדיקת שם משפחה --------------------------- 
-
 const lnameInput = document.getElementById("lname");
 const lnameError = document.getElementById("lname-error");
 
@@ -199,9 +184,7 @@ lnameInput.addEventListener("input", function ()
     }
 });
 
-
 // --------------------------- בדיקת אימייל --------------------------- 
-
 const mailInput = document.getElementById("mail");
 const mailError = document.getElementById("mail-error");
 
@@ -237,9 +220,7 @@ mailInput.addEventListener("input", function ()
     }
 });
 
-
 // --------------------------- בדיקת תאריך לידה ---------------------------
-
 const bdayInput = document.getElementById("bday");
 const bdayError = document.getElementById("bday-error");
 
@@ -268,7 +249,7 @@ bdayInput.addEventListener("change", function ()
 
     if (age < 16 || age > 120)
     {
-        bdayError.textContent = "You must be at least 16 years old to sign up.";
+        bdayError.textContent = "You must be at least 16 years old to use this site.";
         bdayInput.classList.add("invalid");
     }
 
@@ -278,9 +259,7 @@ bdayInput.addEventListener("change", function ()
     }
 });
 
-
 // --------------------------- בדיקת רחוב --------------------------- 
-
 const streetInput = document.getElementById("street");
 const streetError = document.getElementById("street-error");
 
@@ -309,9 +288,7 @@ streetInput.addEventListener("input", function () {
     }
 });
 
-
 // --------------------------- בדיקת מספר רחוב --------------------------- 
-
 const streetNoInput = document.getElementById("street-no");
 const streetNoError = document.getElementById("street-no-error");
 
@@ -338,9 +315,7 @@ streetNoInput.addEventListener("input", function () {
     }
 });
 
-
 // --------------------------- בדיקת עיר ---------------------------
-
 const cityInput = document.getElementById("city");
 const cityError = document.getElementById("city-error");
 const citiesList = document.getElementById("cities-list");
@@ -396,7 +371,6 @@ cityInput.addEventListener("input", function () {
 });
 
 // --------------------------- בדיקה אם שדה חובה ריק --------------------------- 
-
 function checkRequired(id, message)
 {
     const input = document.getElementById(id);

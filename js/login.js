@@ -1,4 +1,8 @@
-
+setupPasswordToggle(
+    "password",
+    "eye-open",
+    "eye-closed"
+);
 // --------------------------- התחברות ---------------------------
 
 const loginForm = document.getElementById("login-form");
@@ -7,8 +11,8 @@ loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
-    const username = document.getElementById("login-username").value;
-    const password = document.getElementById("login-password").value;
+    const username = document.getElementById("login-username").value.trim().toLowerCase();
+    const password = document.getElementById("password").value;
 
     // --------------------------- התחברות מנהל ---------------------------
 
@@ -24,12 +28,15 @@ loginForm.addEventListener("submit", function (event) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
 
+// -------------------------------- הצגת/הסתרת סיסמא ------------------------
+
+
+
 // --------------------------- חיפוש המשתמש ---------------------------
 
     const user = users.find(function (user) {
 
-        return user.username === username && user.password === password;
-
+        return user.username.toLowerCase() === username && user.password === password;
     });
 
     if (!user)

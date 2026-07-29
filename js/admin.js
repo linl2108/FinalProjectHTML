@@ -4,7 +4,6 @@ if (sessionStorage.getItem("isAdmin") !== "true")
 {
     window.location.href = "login.html";
 }
-document.getElementById("username").dispatchEvent(new Event("input"));
 
 
 // --------------------------- משתנים ---------------------------

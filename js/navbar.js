@@ -48,3 +48,20 @@ if (sessionStorage.getItem("isAdmin") === "true")
 
     });
 }
+
+const askLink = document.querySelector('a[href="ask.html"]');
+
+if (askLink)
+{
+    askLink.addEventListener("click", function (event)
+    {
+        const currentUser = sessionStorage.getItem("currentUser");
+        const isAdmin = sessionStorage.getItem("isAdmin");
+
+        if (!currentUser && isAdmin !== "true")
+        {
+            event.preventDefault();
+            window.location.href = "login.html";
+        }
+    });
+}

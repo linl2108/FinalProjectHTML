@@ -1,3 +1,9 @@
+setupPasswordToggle(
+    "password",
+    "eye-open",
+    "eye-closed"
+);
+
 
 // --------------------------- פתיחת החלון ---------------------------
 
@@ -45,6 +51,7 @@ document.getElementById("street-no").dispatchEvent(new Event("input"));
 
 const closeBtn = document.getElementById("close-modal");
 const cancelBtn = document.getElementById("cancel-edit");
+if (editBtn) {
 
 editBtn.addEventListener("click", function () {
 
@@ -54,20 +61,30 @@ editBtn.addEventListener("click", function () {
 
 });
 
+}
+
 
 // --------------------------- סגירת החלון ---------------------------
+if(closeBtn){
 
-closeBtn.addEventListener("click", function () {
+    closeBtn.addEventListener("click", function () {
 
-    modal.style.display = "none";
+        modal.style.display = "none";
 
-});
+    });
 
-cancelBtn.addEventListener("click", function () {
+}
 
-    modal.style.display = "none";
 
-});
+if(cancelBtn){
+
+    cancelBtn.addEventListener("click", function () {
+
+        modal.style.display = "none";
+
+    });
+
+}
 
 
 // --------------------------- סגירה בלחיצה על הרקע ---------------------------
@@ -84,62 +101,35 @@ window.addEventListener("click", function (event) {
 
 // --------------------------- מעבר בין השלבים ---------------------------
 
-const accountTab = document.getElementById("account-tab");
-const personalTab = document.getElementById("personal-tab");
+const editAccountTab = document.getElementById("account-tab");
+const editPersonalTab = document.getElementById("personal-tab");
 
-const accountSection = document.getElementById("account-section");
-const personalSection = document.getElementById("personal-section");
+const editAccountSection = document.getElementById("account-section");
+const editPersonalSection = document.getElementById("personal-section");
 
 
-accountTab.addEventListener("click", function () {
+editAccountTab.addEventListener("click", function () {
 
-    accountSection.style.display = "block";
-    personalSection.style.display = "none";
+    editAccountSection.style.display = "block";
+    editPersonalSection.style.display = "none";
 
-    accountTab.classList.add("active-tab");
-    personalTab.classList.remove("active-tab");
+    editAccountTab.classList.add("active-tab");
+    editPersonalTab.classList.remove("active-tab");
 
 });
 
 
-personalTab.addEventListener("click", function () {
+editPersonalTab.addEventListener("click", function () {
 
-    accountSection.style.display = "none";
-    personalSection.style.display = "block";
+    editAccountSection.style.display = "none";
+    editPersonalSection.style.display = "block";
 
-    personalTab.classList.add("active-tab");
-    accountTab.classList.remove("active-tab");
+    editPersonalTab.classList.add("active-tab");
+    editAccountTab.classList.remove("active-tab");
 
 });
 
 const saveBtn = document.getElementById("save-edit");
-
-/*saveBtn.addEventListener("click", function(){
-
-    const user = JSON.parse(localStorage.getItem("currentUser"));
-
-    user.username = document.getElementById("edit-username").value;
-
-    user.mail = document.getElementById("edit-mail").value;
-
-    user.password = document.getElementById("edit-password").value;
-
-    user.fname = document.getElementById("edit-fname").value;
-
-    user.lname = document.getElementById("edit-lname").value;
-
-    user.bday = document.getElementById("edit-bday").value;
-
-    user.city = document.getElementById("edit-city").value;
-
-    user.street = document.getElementById("edit-street").value;
-
-    user.streetNo = document.getElementById("edit-street-no").value;
-
-    localStorage.setItem("currentUser", JSON.stringify(user));
-
-});*/
-
 
 saveBtn.addEventListener("click", function () {
 
@@ -176,6 +166,7 @@ saveBtn.addEventListener("click", function () {
     });
 
     if (valid) {
+        
         updateUser();
     }
 
@@ -186,14 +177,25 @@ function updateUser() {
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    let currentUser;
+
+const editingAdminUser = sessionStorage.getItem("editingAdminUser");
+
+if (editingAdminUser !== null) {
+
+    currentUser = users[editingAdminUser];
+
+}
+else {
+
+    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+
+}
 
     const updatedUser = {
-
         ...currentUser,
-
-        username: document.getElementById("username").value,
-        mail: document.getElementById("mail").value,
+        username: document.getElementById("username").value.trim().toLowerCase(),
+        mail: document.getElementById("mail").value.trim().toLowerCase(),
         password: document.getElementById("password").value,
         fname: document.getElementById("fname").value,
         lname: document.getElementById("lname").value,
@@ -204,11 +206,23 @@ function updateUser() {
 
     };
 
-    const index = users.findIndex(function(user){
+    let index;
 
-    return user.username.toLowerCase() === currentUser.username.toLowerCase();
+if (editingAdminUser !== null) {
 
-});
+    index = Number(editingAdminUser);
+
+}
+else {
+
+    index = users.findIndex(function(user){
+
+        return user.username.toLowerCase() === currentUser.username.toLowerCase();
+
+    });
+
+}
+
 
     const image = document.getElementById("profile-pic").files[0];
 
@@ -224,9 +238,22 @@ function updateUser() {
 
             localStorage.setItem("users", JSON.stringify(users));
 
-            sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+            if (editingAdminUser === null) {
 
-            loadProfile();
+    sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+    if (typeof loadProfile === "function") {
+        loadProfile();
+    }
+
+}
+else {
+
+    if (typeof loadUsers === "function") {
+        loadUsers();
+    }
+
+}
 
             modal.style.display = "none";
 
@@ -242,9 +269,23 @@ function updateUser() {
 
         localStorage.setItem("users", JSON.stringify(users));
 
-        sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        if (editingAdminUser === null) {
 
+    sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+    if (typeof loadProfile === "function") {
         loadProfile();
+    }
+
+}
+else {
+
+    if (typeof loadUsers === "function") {
+        loadUsers();
+    }
+
+}
+
 
         modal.style.display = "none";
 

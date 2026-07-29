@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - html JavaScript</title>
+    <link rel="stylesheet" href="SCSS/style.css">
+</head> 
+<body id="top">
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Ask<span>Hub</span></div>
+        <div class="subtitle">A place where you can find an answer to any question.</div>
+
+       <!--צקבוקס מוסתר-->
+       <input type="checkbox" id="menu-toggle">
+
+       <!--כפתור לפתיחת התפריט-->
+       <label for="menu-toggle" class="hamburger">
+        ☰
+       </label>
+
+        <nav class="menu">
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About</a>
+            <a href="ask.html">Ask a question</a>
+            <a id="login-link" href="login.html" class="login">Log In</a>
+            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <!-- טופס לשאילת שאלה (יוצג רק למשתמש מחובר) -->
+     <div class="white-bubble">
+        <h2>Ask a question</h2>
+
+        <div class="form-content">
+        <form id="ask-question-form" class="form">
+            <label>Question title:
+                <input id="question-title" type="text" name="title" required placeholder="type here..." min="4" max=45>
+                <div id="question-title-error" class="error"></div>
+            </label>
+
+            <label>Question content:
+                <textarea id="question-content" type="text" name="content" required placeholder="write you question here..." max=5000></textarea>
+                <div id="question-content-error" class="error"></div>
+            </label>
+            
+            <button type="submit" class="ask-question-btn">Post question</button>
+        </div>
+        </form>
+    </div>
+</main>
+
+<footer id="form-section">
+    <p class="copyright">
+    © AskHub 2026</p>
+</footer>
+<script src="js/navbar.js"></script>
+<script src="js/ask.js"></script>
+</body>
+</html>

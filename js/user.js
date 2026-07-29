@@ -62,6 +62,7 @@ function createUser() {
 // --------------------------- בדיקת שם משתמש אם קיים/לא קיים במערכת ---------------------------
 
 function usernameExists(username) {
+    console.log("usernameExists called:", username);
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     let currentUser;

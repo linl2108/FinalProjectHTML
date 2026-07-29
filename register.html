@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project - html JavaScript</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="SCSS/style.css">
 </head> 
 <body id="top">
 
@@ -24,6 +24,7 @@
         <nav class="menu">
             <a href="index.html">Homepage</a>
             <a href="about.html">About</a>
+            <a href="ask.html">Ask a question</a>
             <a id="login-link" href="login.html" class="login">Log In</a>
             <a id="signup-link" href="register.html" class="signup">Sign Up</a>
         </nav>
@@ -37,7 +38,7 @@
         <div id="step1-title" class="step active">1. Personal Details</div>
         <div id="step2-title" class="step">2. Account Details</div>
     </div>
-<div class="form-content">
+    <div class="form-content">
         <p>Already a member?
         <a href="login.html">Log in</a>
         </p>
@@ -91,7 +92,53 @@
             </label>
 
             <label>Password:
+                                <div class="password-container">
+
                 <input id="password" type="password" name="password" required placeholder="type here..." minlength="7" maxlength="12">
+                                        <!-- עין פתוחה -->
+        <svg id="eye-open"
+             class="toggle-password"
+             xmlns="http://www.w3.org/2000/svg"
+             width="22"
+             height="22"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             style="display:none;">
+
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+
+        </svg>
+
+
+        <!-- עין עם קו -->
+        <svg id="eye-closed"
+             class="toggle-password"
+             xmlns="http://www.w3.org/2000/svg"
+             width="18"
+             height="18"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"></path>
+
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>
+
+            <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
+
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+
+        </svg>
+
+    </div>
                 <span id="password-error" class="error"></span>
             </label>
 
@@ -127,6 +174,7 @@
 <script src="js/navbar.js"></script>
 <script src="js/user.js"></script>
 <script src="js/validation.js"></script>
+<script src="js/password.js"></script>
 <script src="js/register.js"></script>
 </body>
 </html>
