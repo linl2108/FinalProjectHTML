@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project - html JavaScript</title>
     <link rel="stylesheet" href="SCSS/style.css">
-</head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
 <body id="top">
 
-<header>
-    <div class="nav-container">
-        <div class="logo">Ask<span>Hub</span></div>
-        <div class="subtitle">A place where you can find an answer to any question.</div>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Ask<span>Hub</span></div>
+            <div class="subtitle">A place where you can find an answer to any question.</div>
 
-       <!--צקבוקס מוסתר-->
-       <input type="checkbox" id="menu-toggle">
+            <!--צקבוקס מוסתר-->
+            <input type="checkbox" id="menu-toggle">
 
-       <!--כפתור לפתיחת התפריט-->
-       <label for="menu-toggle" class="hamburger">
-        ☰
-       </label>
+            <!--כפתור לפתיחת התפריט-->
+            <label for="menu-toggle" class="hamburger">
+                ☰
+            </label>
 
-        <nav class="menu">
-            <a href="index.html">Homepage</a>
-            <a href="about.html">About</a>
-            <a href="ask.html">Ask a question</a>
-            <a id="login-link" href="login.html" class="login">Log In</a>
-            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
-        </nav>
-    </div>
-</header>
+            <nav class="menu">
+                <a href="index.html">Homepage</a>
+                <a href="about.html">About</a>
+                <a href="ask.html">Ask a question</a>
+                <a id="login-link" href="login.html" class="login">Log In</a>
+                <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<main class="container">
-    <h1 class="site-title">Welcome back to AskHub!</h1>
-     <div class="white-bubble">
-        <h2>Log In</h2>
-        <p>
-    <div class="form-content">
-           Not signed-up yet?
-           <a href="register.html">Sign up</a>
-        </p>
-        <form id="login-form" class="form">
-            <label>Username:
-                <input id="login-username" type="text" name="username" required placeholder="type here..."">
+    <main class="container">
+        <h1 class="site-title">Welcome back to AskHub!</h1>
+        <div class="white-bubble">
+            <h2>Log In</h2>
+            <p>
+            <div class="form-content">
+                Not signed-up yet?
+                <a href="register.html">Sign up</a>
+                </p>
+                <form id="login-form" class="form">
+                    <label>Username:
+                        <input id="login-username" type="text" name="username" required placeholder="type here..."">
             </label>
 
             <label>Password:
-                <div class="password-container">
-                <input id="password" type="password" name="password" required placeholder="type here...">
+                <div class=" password-container">
+                        <input id="password" type="password" name="password" required placeholder="type here...">
                         <!-- עין פתוחה -->
-        <svg id="eye-open"
-             class="toggle-password"
-             xmlns="http://www.w3.org/2000/svg"
-             width="22"
-             height="22"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             style="display:none;">
+                        <svg id="eye-open" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="22"
+                            height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display:none;">
 
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
 
-        </svg>
+                        </svg>
 
 
-        <!-- עין עם קו -->
-        <svg id="eye-closed"
-             class="toggle-password"
-             xmlns="http://www.w3.org/2000/svg"
-             width="18"
-             height="18"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2"
-             stroke-linecap="round"
-             stroke-linejoin="round">
+                        <!-- עין עם קו -->
+                        <svg id="eye-closed" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="18"
+                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
 
-            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"></path>
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94">
+                            </path>
 
-            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>
+                            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>
 
-            <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
+                            <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
 
-            <line x1="1" y1="1" x2="23" y2="23"></line>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
 
-        </svg>
+                        </svg>
 
-    </div>
-                <div id="login-error" class="error"></div>
-            </label>
-            
-            <button type="submit" class="login-btn">Log In</button>
             </div>
-        </form>
-    </div>
-</main>
+            <div id="login-error" class="error"></div>
+            </label>
 
-<footer id="form-section">
-    <p class="copyright">
-    © AskHub 2026</p>
-</footer>
-<script src="js/navbar.js"></script>
-<script src="js/user.js"></script>
-<script src="js/password.js"></script>
-<script src="js/login.js"></script>
+            <button type="submit" class="login-btn">Log In</button>
+        </div>
+        </form>
+        </div>
+    </main>
+
+    <footer id="form-section" class="copyright">
+        <p>
+            <span class="contact">
+                Need help? Contact us: <i class="fa-brands fa-whatsapp"></i> 051-234-5678
+            </span>
+
+            <span class="separator">|</span>
+
+            <span class="social">
+                Follow us: <i class="fa-brands fa-instagram"></i> askhub_il
+            </span>
+
+            <span>
+                <i id="facebook" class="fa-brands fa-facebook"></i> Askhub Community
+            </span>
+        </p>
+        <p>© AskHub 2026.</p>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/password.js"></script>
+    <script src="js/login.js"></script>
 </body>
+
 </html>

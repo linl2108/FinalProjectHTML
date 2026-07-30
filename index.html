@@ -1,106 +1,127 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project - html JavaScript</title>
     <link rel="stylesheet" href="SCSS/style.css">
-</head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
 <body id="top">
+    <header>
+        <div class="nav-container">
+            <div class="logo">Ask<span>Hub</span></div>
+            <div class="subtitle">A place where you can find an answer to any question.</div>
 
-<header>
-    <div class="nav-container">
-        <div class="logo">Ask<span>Hub</span></div>
-        <div class="subtitle">A place where you can find an answer to any question.</div>
+            <!--צקבוקס מוסתר-->
+            <input type="checkbox" id="menu-toggle">
 
-       <!--צקבוקס מוסתר-->
-       <input type="checkbox" id="menu-toggle">
+            <!--כפתור לפתיחת התפריט-->
+            <label for="menu-toggle" class="hamburger">
+                ☰
+            </label>
 
-       <!--כפתור לפתיחת התפריט-->
-       <label for="menu-toggle" class="hamburger">
-        ☰
-       </label>
+            <nav class="menu">
+                <a href="index.html">Homepage</a>
+                <a href="about.html">About</a>
+                <a href="ask.html">Ask a question</a>
+                <a id="login-link" href="login.html" class="login">Log In</a>
+                <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-        <nav class="menu">
-            <a href="index.html">Homepage</a>
-            <a href="about.html">About</a>
-            <a href="ask.html">Ask a question</a>
-            <a id="login-link" href="login.html" class="login">Log In</a>
-            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
-        </nav>
-    </div>
-</header>
+    <main class="container">
+        <h1 class="site-title">Welcome to AskHub!</h1>
+        <div class="grid-layout">
+            <!--שאלה ראשית-->
+            <article class="card main-article">
+                <img src="https://media.istockphoto.com/id/1201016752/photo/young-woman-having-a-midnight-snack.jpg?s=612x612&w=0&k=20&c=JHUdr2XHTFOThA7o6x220K0A11wLV5Yn7DySJst-lzk="
+                    alt="ארוחת ערב">
+                <div class="card-content">
+                    <h2>מה אפשר להכין לארוחת ערב?</h2>
+                    <p>עכשיו לילה ואני מחפשת רעיון לארוחה פשוטה, מהירה וטעימה...</p>
+                    <a href="#" class="btn">קרא עוד</a>
+                </div>
+            </article>
 
-<main class="container">
-    <h1 class="site-title">Welcome to AskHub!</h1>
-    <div class="grid-layout">      
-        <!--שאלה ראשית-->
-        <article class="card main-article">
-            <img src="https://media.istockphoto.com/id/1201016752/photo/young-woman-having-a-midnight-snack.jpg?s=612x612&w=0&k=20&c=JHUdr2XHTFOThA7o6x220K0A11wLV5Yn7DySJst-lzk=" alt="ארוחת ערב">
-            <div class="card-content">
-                <h2>מה אפשר להכין לארוחת ערב?</h2>
-                <p>עכשיו לילה ואני מחפשת רעיון לארוחה פשוטה, מהירה וטעימה...</p>
-                <a href="#" class="btn">קרא עוד</a>
-            </div>
-        </article>
-        
-        <!--שאלה 2-->
-        <article class="card">
-            <img src="https://www.t.co.il/storage/uploads/b8362fad-dc0a-4314-a974-de84495442db.jpg" alt="טלפון">
-            <div class="card-content">
-                <h2>מתלבט איזה טלפון כדאי לקנות?</h2>
-                <p>אני מחפש טלפון חדש במחיר סביר, על מה אתם ממליצים? ואיזה...</p>
-                <a href="#" class="btn">קרא עוד</a>
-            </div>
-        </article>
+            <!--שאלה 2-->
+            <article class="card">
+                <img src="https://www.t.co.il/storage/uploads/b8362fad-dc0a-4314-a974-de84495442db.jpg" alt="טלפון">
+                <div class="card-content">
+                    <h2>מתלבט איזה טלפון כדאי לקנות?</h2>
+                    <p>אני מחפש טלפון חדש במחיר סביר, על מה אתם ממליצים? ואיזה...</p>
+                    <a href="#" class="btn">קרא עוד</a>
+                </div>
+            </article>
 
-        <!--שאלה 3-->
-        <article class="card">
-            <img src="https://www.bali-studio.com/wp-content/uploads/2024/12/20_640x426.jpg.webp" alt="חדר">
-            <div class="card-content">
-                <h2>לא יכולה יותר! איך שומרים על חדר מסודר?</h2>
-                <p>החדר שלי תמיד מבולגן ואני לא מצליחה לשמור על סדר, יש לכם...</p>
-                <a href="#" class="btn">קרא עוד</a>
-            </div>
-        </article>
+            <!--שאלה 3-->
+            <article class="card">
+                <img src="https://www.bali-studio.com/wp-content/uploads/2024/12/20_640x426.jpg.webp" alt="חדר">
+                <div class="card-content">
+                    <h2>לא יכולה יותר! איך שומרים על חדר מסודר?</h2>
+                    <p>החדר שלי תמיד מבולגן ואני לא מצליחה לשמור על סדר, יש לכם...</p>
+                    <a href="#" class="btn">קרא עוד</a>
+                </div>
+            </article>
 
-        <!--שאלה 4-->
-        <article class="card">
-            <img src="https://www.pqpq2.co.il/productImages2/124/2023/11/12/image1699783117.jpg" alt="סרט">
-            <div class="card-content">
-                <h2>מחפש המלצות - לאיזה סרט כדאי לצאת?</h2>
-                <p>אני רוצה לצאת לסרט עם חברים, על איזה סרט אתם ממליצים? אנחנו...</p>
-                <a href="#" class="btn">קרא עוד</a>
-            </div>
-        </article>
+            <!--שאלה 4-->
+            <article class="card">
+                <img src="https://www.pqpq2.co.il/productImages2/124/2023/11/12/image1699783117.jpg" alt="סרט">
+                <div class="card-content">
+                    <h2>מחפש המלצות - לאיזה סרט כדאי לצאת?</h2>
+                    <p>אני רוצה לצאת לסרט עם חברים, על איזה סרט אתם ממליצים? אנחנו...</p>
+                    <a href="#" class="btn">קרא עוד</a>
+                </div>
+            </article>
 
-        <!--שאלה 5-->
-        <article class="card">
-            <img src="https://hungryparis.com/wp-content/uploads/2022/12/318791356_687440199724669_7890385769118981096_n-1024x768.jpg" alt="מסעדה">
-            <div class="card-content">
-                <h2>מסעדה ליום הולדת - מה מומלץ?</h2>
-                <p>אני רוצה לקחת את הבת זוג שלי למסעדה מיוחדת ביום הולדת שלה...</p>
-                <a href="#" class="btn">קרא עוד</a>
-            </div>
-        </article>
+            <!--שאלה 5-->
+            <article class="card">
+                <img src="https://hungryparis.com/wp-content/uploads/2022/12/318791356_687440199724669_7890385769118981096_n-1024x768.jpg"
+                    alt="מסעדה">
+                <div class="card-content">
+                    <h2>מסעדה ליום הולדת - מה מומלץ?</h2>
+                    <p>אני רוצה לקחת את הבת זוג שלי למסעדה מיוחדת ביום הולדת שלה...</p>
+                    <a href="#" class="btn">קרא עוד</a>
+                </div>
+            </article>
 
-        <!--שאלה 6-->
-        <article class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn54LryjG3MNIOIskVXW60TSadhxC5EGrFEA&s" alt="שווארמה">
-            <div class="card-content">
-                <h2>מי השווארמה הכי טובה בארץ?</h2>
-                <p>אחת ולתמיד מי השווארמה הכי טובה בארץ לדעתכם? ותפרטו למה...</p>
-                <a href="#" class="btn">קרא עוד</a>
-            </div>
-        </article>
+            <!--שאלה 6-->
+            <article class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn54LryjG3MNIOIskVXW60TSadhxC5EGrFEA&s"
+                    alt="שווארמה">
+                <div class="card-content">
+                    <h2>מי השווארמה הכי טובה בארץ?</h2>
+                    <p>אחת ולתמיד מי השווארמה הכי טובה בארץ לדעתכם? ותפרטו למה...</p>
+                    <a href="#" class="btn">קרא עוד</a>
+                </div>
+            </article>
 
-    </div>
-</main>
+        </div>
+    </main>
 
-<footer id="form-section">
-    <p class="copyright">
-    © AskHub 2026</p>
-</footer>
-<script src="js/navbar.js"></script>
+    <footer id="form-section" class="copyright">
+        <p>
+            <span class="contact">
+                Need help? Contact us: <i class="fa-brands fa-whatsapp"></i> 051-234-5678
+            </span>
+
+            <span class="separator">|</span>
+
+            <span class="social">
+                Follow us: <i class="fa-brands fa-instagram"></i> askhub_il
+            </span>
+
+            <span>
+                <i id="facebook" class="fa-brands fa-facebook"></i> Askhub Community
+            </span>
+        </p>
+        <p>© AskHub 2026.</p>
+    </footer>
+    
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>

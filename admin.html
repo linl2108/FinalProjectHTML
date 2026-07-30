@@ -1,151 +1,138 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project - html JavaScript</title>
     <link rel="stylesheet" href="SCSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body id="top">
 
-<header>
-    <div class="nav-container">
-        <div class="logo">Ask<span>Hub</span></div>
-        <div class="subtitle">A place where you can find an answer to any question.</div>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Ask<span>Hub</span></div>
+            <div class="subtitle">A place where you can find an answer to any question.</div>
 
-       <!--צקבוקס מוסתר-->
-       <input type="checkbox" id="menu-toggle">
+            <!--צקבוקס מוסתר-->
+            <input type="checkbox" id="menu-toggle">
 
-       <!--כפתור לפתיחת התפריט-->
-       <label for="menu-toggle" class="hamburger">
-        ☰
-       </label>
+            <!--כפתור לפתיחת התפריט-->
+            <label for="menu-toggle" class="hamburger">
+                ☰
+            </label>
 
-        <nav class="menu">
-            <a href="index.html">Homepage</a>
-            <a href="about.html">About</a>
-            <a id="login-link" href="login.html" class="login">Log In</a>
-            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
-        </nav>
-    </div>
-</header>
-
-<main class="container">
-    <h1 class="site-title">Hey Admin, welcome back!</h1>
-    <div class="white-bubble admin-card">
-        <table id="users-table" class="admin-table">
-            <thead>
-                <tr>
-                <th>Profile Picture</th>
-                <th>Username</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Birth Date</th>
-                <th>Address</th>
-                <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="users-body"></tbody>
-        </table>
-    </div>
-</main>
-
-
-<!-- --------------------------- Edit Profile Modal --------------------------- -->
-
-<div id="edit-profile-modal" class="modal">
-
-    <div class="modal-content">
-
-        <span id="close-modal" class="close">&times;</span>
-
-        <h2>Edit Profile</h2>
-
-        <div class="modal-steps">
-
-            <button id="account-tab" class="active-tab" type="button">
-                Edit Account Info
-            </button>
-
-            <button id="personal-tab" type="button">
-                Edit Personal Details
-            </button>
-
+            <nav class="menu">
+                <a href="index.html">Homepage</a>
+                <a href="about.html">About</a>
+                <a href="ask.html">Ask a question</a>
+                <a id="login-link" href="login.html" class="login">Log In</a>
+                <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+            </nav>
         </div>
+    </header>
+
+    <main class="container">
+        <h1 class="site-title">Hey Admin, welcome back!</h1>
+        <div class="white-bubble admin-card">
+            <table id="users-table" class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Profile Picture</th>
+                        <th>Username</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Birth Date</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="users-body"></tbody>
+            </table>
+        </div>
+    </main>
 
 
-        <!-- --------------------------- שלב 1 --------------------------- -->
+    <!-- --------------------------- Edit Profile Modal --------------------------- -->
 
-        <div id="account-section">
+    <div id="edit-profile-modal" class="modal">
 
-            <label>
-                Username
-                <input type="text" id="username">
-                <span id="username-error" class="error"></span>
-            </label>
+        <div class="modal-content">
 
-            <label>
-                Profile Picture
-                <input type="file" id="profile-pic">
-                <span id="profile-pic-error" class="error"></span>
-            </label>
+            <span id="close-modal" class="close">&times;</span>
 
-            <label>
-                Email
-                <input type="email" id="mail">
-                <span id="mail-error" class="error"></span>
-            </label>
+            <h2>Edit Profile</h2>
 
-            <label>
-                Password
-                <div class="password-container"></div>
-                <input type="password" id="password">
-                 <!-- עין פתוחה -->
-        <svg id="eye-open"
-             class="toggle-password"
-             xmlns="http://www.w3.org/2000/svg"
-             width="22"
-             height="22"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             style="display:none;">
+            <div class="modal-steps">
 
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
+                <button id="account-tab" class="active-tab" type="button">
+                    Edit Account Info
+                </button>
 
-        </svg>
+                <button id="personal-tab" type="button">
+                    Edit Personal Details
+                </button>
+
+            </div>
 
 
-        <!-- עין עם קו -->
-        <svg id="eye-closed"
-             class="toggle-password"
-             xmlns="http://www.w3.org/2000/svg"
-             width="18"
-             height="18"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2"
-             stroke-linecap="round"
-             stroke-linejoin="round">
+            <!-- --------------------------- שלב 1 --------------------------- -->
 
-            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"></path>
+            <div id="account-section">
 
-            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>
+                <label>
+                    Username
+                    <input type="text" id="username">
+                    <span id="username-error" class="error"></span>
+                </label>
 
-            <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
+                <label>
+                    Profile Picture
+                    <input type="file" id="profile-pic">
+                    <span id="profile-pic-error" class="error"></span>
+                </label>
 
-            <line x1="1" y1="1" x2="23" y2="23"></line>
+                <label>
+                    Email
+                    <input type="email" id="mail">
+                    <span id="mail-error" class="error"></span>
+                </label>
 
-        </svg>
+                <label>
+                    Password
+                    <div class="password-container">
+                    <input type="password" id="password">
+                    <!-- עין פתוחה -->
+                    <svg id="eye-open" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="display:none;">
 
-    </div>
-                <span id="password-error" class="error"></span>
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+
+                    </svg>
+
+
+                    <!-- עין עם קו -->
+                    <svg id="eye-closed" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="18"
+                        height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94">
+                        </path>
+
+                        <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>
+
+                        <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
+
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+
+                    </svg>
+
+            </div>
+            <span id="password-error" class="error"></span>
             </label>
 
             <label>
@@ -214,41 +201,57 @@
 
     </div>
 
-</div>
+    </div>
 
-<!-- Delete User Modal -->
+    <!-- Delete User Modal -->
 
-<div id="delete-modal" class="modal">
+    <div id="delete-modal" class="modal">
 
-    <div class="delete-modal-content">
+        <div class="delete-modal-content">
 
-        <h3>Are you sure you want to delete this user?</h3>
+            <h3>Are you sure you want to delete this user?</h3>
 
-        <div class="delete-buttons">
+            <div class="delete-buttons">
 
-            <button id="confirm-delete" type="button">
-                Yes
-            </button>
+                <button id="confirm-delete" type="button">
+                    Yes
+                </button>
 
-            <button id="cancel-delete" type="button">
-                No
-            </button>
+                <button id="cancel-delete" type="button">
+                    No
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
+    <footer id="form-section" class="copyright">
+        <p>
+            <span class="contact">
+                Need help? Contact us: <i class="fa-brands fa-whatsapp"></i> 051-234-5678
+            </span>
 
-<footer id="form-section">
-    <p class="copyright">
-    © AskHub 2026</p>
-</footer>
-<script src="js/navbar.js"></script>
-<script src="js/admin.js"></script>
-<script src="js/user.js"></script>
-<script src="js/validation.js"></script>
-<script src="js/password.js"></script>
-<script src="js/editprofile.js"></script>
+            <span class="separator">|</span>
+
+            <span class="social">
+                Follow us: <i class="fa-brands fa-instagram"></i> askhub_il
+            </span>
+
+            <span>
+                <i id="facebook" class="fa-brands fa-facebook"></i> Askhub Community
+            </span>
+        </p>
+        <p>© AskHub 2026.</p>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/password.js"></script>
+    <script src="js/editprofile.js"></script>
 </body>
+
 </html>

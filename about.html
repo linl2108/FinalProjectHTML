@@ -1,61 +1,96 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project - html JavaScript</title>
     <link rel="stylesheet" href="SCSS/style.css">
-</head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
 <body id="top">
 
-<header>
-    <div class="nav-container">
-        <div class="logo">Ask<span>Hub</span></div>
-        <div class="subtitle">A place where you can find an answer to any question.</div>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Ask<span>Hub</span></div>
+            <div class="subtitle">A place where you can find an answer to any question.</div>
 
-       <!--צקבוקס מוסתר-->
-       <input type="checkbox" id="menu-toggle">
+            <!--צקבוקס מוסתר-->
+            <input type="checkbox" id="menu-toggle">
 
-       <!--כפתור לפתיחת התפריט-->
-       <label for="menu-toggle" class="hamburger">
-        ☰
-       </label>
+            <!--כפתור לפתיחת התפריט-->
+            <label for="menu-toggle" class="hamburger">
+                ☰
+            </label>
 
-        <nav class="menu">
-            <a href="index.html">Homepage</a>
-            <a href="about.html">About</a>
-            <a href="ask.html">Ask a question</a>
-            <a id="login-link" href="login.html" class="login">Log In</a>
-            <a id="signup-link" href="register.html" class="signup">Sign Up</a>
-        </nav>
-    </div>
-</header>
+            <nav class="menu">
+                <a href="index.html">Homepage</a>
+                <a href="about.html">About</a>
+                <a href="ask.html">Ask a question</a>
+                <a id="login-link" href="login.html" class="login">Log In</a>
+                <a id="signup-link" href="register.html" class="signup">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<main class="container">
-    <section class="about-strip" id="about-section">
-        <h1>About AskHub</h1>
-    <div class="inner-about">
-        <p>Here, with complete anonymity and without the need for payment, you can consult and advise:</p>
-        <p>Consult - without any fear of exposure, and while maintaining your privacy, you can ask for advice on any dilemma that concerns you from childhood through adolescence to adulthood, in any field and at any stage of life.</p>
-        <p>And advise - without having to be an expert or professional, from your honest and free opinion and your life experience, you can provide your help to those consulting and those in doubt in any field and at any stage of life.</p>
-        <br>
-        <p>AskHub is your place to create a different kind of interaction, a kind of mutual help, from where people open their hearts to share concerns and dilemmas and to give honest opinions and share personal experiences, or to learn from the mistakes of others.</p>
-        <p>Here you can consult and advise on issues of relationships, home, family, parenting, career, military, studies, adulthood, and a wide variety of other topics.</p>
-        <br>
-        <p>On AskHub, the process of asking questions is simple, convenient, clear and dynamic. Your questions will be published as they are, without restrictions on your personal expression and while providing a platform to present you and your question in the best possible way.</p>
-        <p>Through the questions, you can vent your feelings and share them with people who are more than willing to try and give you any possible solution, choose the advice that helped you the best and update the users on your situation after asking the question.</p>
-        <p>All you have to do is click the "Add Question" button at the top of the page, choose the field of your question, introduce yourself in completely basic details and any name you choose, formulate your question - and the question will be open for a quick and extensive answer.</p>
-        <br>
-        <p>Each of you can choose any question that you think can help the person asking it and in a process that takes a few minutes you can write your advice and help the person asking it in your own way.</p>
-        <p>You, the advisors, do not have to be experts in the field in which you advise, and sometimes it is even better - you are helping people just like you, who trust you with their personal dilemmas.</p>
-    </div>
-</section>
-</main>
+    <main class="container">
+        <section class="about-strip" id="about-section">
+            <h1>About AskHub</h1>
+            <div class="inner-about">
+                <p>Here, with complete anonymity and without the need for payment, you can consult and advise:</p>
+                <p>Consult - without any fear of exposure, and while maintaining your privacy, you can ask for advice on
+                    any dilemma that concerns you from childhood through adolescence to adulthood, in any field and at
+                    any stage of life.</p>
+                <p>And advise - without having to be an expert or professional, from your honest and free opinion and
+                    your life experience, you can provide your help to those consulting and those in doubt in any field
+                    and at any stage of life.</p>
+                <br>
+                <p>AskHub is your place to create a different kind of interaction, a kind of mutual help, from where
+                    people open their hearts to share concerns and dilemmas and to give honest opinions and share
+                    personal experiences, or to learn from the mistakes of others.</p>
+                <p>Here you can consult and advise on issues of relationships, home, family, parenting, career,
+                    military, studies, adulthood, and a wide variety of other topics.</p>
+                <br>
+                <p>On AskHub, the process of asking questions is simple, convenient, clear and dynamic. Your questions
+                    will be published as they are, without restrictions on your personal expression and while providing
+                    a platform to present you and your question in the best possible way.</p>
+                <p>Through the questions, you can vent your feelings and share them with people who are more than
+                    willing to try and give you any possible solution, choose the advice that helped you the best and
+                    update the users on your situation after asking the question.</p>
+                <p>All you have to do is click the "Add Question" button at the top of the page, choose the field of
+                    your question, introduce yourself in completely basic details and any name you choose, formulate
+                    your question - and the question will be open for a quick and extensive answer.</p>
+                <br>
+                <p>Each of you can choose any question that you think can help the person asking it and in a process
+                    that takes a few minutes you can write your advice and help the person asking it in your own way.
+                </p>
+                <p>You, the advisors, do not have to be experts in the field in which you advise, and sometimes it is
+                    even better - you are helping people just like you, who trust you with their personal dilemmas.</p>
+            </div>
+        </section>
+    </main>
 
-<footer id="form-section">
-    <p class="copyright">
-    © AskHub 2026</p>
-</footer>
-<script src="js/navbar.js"></script>
+    <footer id="form-section" class="copyright">
+        <p>
+            <span class="contact">
+                Need help? Contact us: <i class="fa-brands fa-whatsapp"></i> 051-234-5678
+            </span>
+
+            <span class="separator">|</span>
+
+            <span class="social">
+                Follow us: <i class="fa-brands fa-instagram"></i> askhub_il
+            </span>
+
+            <span>
+                <i id="facebook" class="fa-brands fa-facebook"></i> Askhub Community
+            </span>
+        </p>
+        <p>© AskHub 2026.</p>
+    </footer>
+
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>

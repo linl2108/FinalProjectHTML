@@ -5,31 +5,30 @@
 function loadProfile() {
 
     const loggedUser = JSON.parse(sessionStorage.getItem("currentUser"));
-    if (!loggedUser)
-    {
+    if (!loggedUser) {
         window.location.href = "login.html";
         return;
     }
 
     document.getElementById("profile-name").textContent =
-    loggedUser.fname + " " + loggedUser.lname;
+        loggedUser.fname + " " + loggedUser.lname;
 
     document.getElementById("profile-username").textContent =
-    "@" + loggedUser.username;
+        "@" + loggedUser.username;
 
     document.getElementById("profile-email").textContent =
-    loggedUser.mail;
+        loggedUser.mail;
 
     document.getElementById("profile-bday").textContent =
-    loggedUser.bday;
+        loggedUser.bday;
 
     document.getElementById("profile-address").textContent =
-    loggedUser.city + ", " +
-    loggedUser.street + " " +
-    loggedUser.streetNo;
+        loggedUser.city + ", " +
+        loggedUser.street + " " +
+        loggedUser.streetNo;
 
     document.getElementById("profile-image").src = loggedUser.profilePic;
-    
+
 }
 
 loadProfile();
@@ -38,4 +37,16 @@ const gameBtn = document.getElementById("game-btn");
 
 gameBtn.addEventListener("click", function () {
     window.open("game.html", "_blank");
+});
+
+// --------------------------- כפתור יציאה (Logout) ---------------------------
+
+const logoutBtn = document.getElementById("logout-btn");
+
+logoutBtn.addEventListener("click", function () {
+
+    sessionStorage.removeItem("currentUser");
+
+    window.location.href = "index.html";
+
 });

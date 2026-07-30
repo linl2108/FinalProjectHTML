@@ -11,7 +11,7 @@ const editBtn = document.getElementById("edit-profile-btn");
 const modal = document.getElementById("edit-profile-modal");
 
 
-function fillForm(){
+function fillForm() {
 
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
@@ -36,15 +36,15 @@ function fillForm(){
     document.getElementById("street-no").value = user.streetNo;
 
     document.getElementById("username").dispatchEvent(new Event("input"));
-document.getElementById("mail").dispatchEvent(new Event("input"));
-document.getElementById("password").dispatchEvent(new Event("input"));
-document.getElementById("confirm-password").dispatchEvent(new Event("input"));
-document.getElementById("fname").dispatchEvent(new Event("input"));
-document.getElementById("lname").dispatchEvent(new Event("input"));
-document.getElementById("bday").dispatchEvent(new Event("change"));
-document.getElementById("city").dispatchEvent(new Event("input"));
-document.getElementById("street").dispatchEvent(new Event("input"));
-document.getElementById("street-no").dispatchEvent(new Event("input"));
+    document.getElementById("mail").dispatchEvent(new Event("input"));
+    document.getElementById("password").dispatchEvent(new Event("input"));
+    document.getElementById("confirm-password").dispatchEvent(new Event("input"));
+    document.getElementById("fname").dispatchEvent(new Event("input"));
+    document.getElementById("lname").dispatchEvent(new Event("input"));
+    document.getElementById("bday").dispatchEvent(new Event("change"));
+    document.getElementById("city").dispatchEvent(new Event("input"));
+    document.getElementById("street").dispatchEvent(new Event("input"));
+    document.getElementById("street-no").dispatchEvent(new Event("input"));
 
 }
 
@@ -53,37 +53,32 @@ const closeBtn = document.getElementById("close-modal");
 const cancelBtn = document.getElementById("cancel-edit");
 if (editBtn) {
 
-editBtn.addEventListener("click", function () {
+    editBtn.addEventListener("click", function () {
 
-    fillForm();
+        fillForm();
 
-    modal.style.display = "flex";
-
-});
-
+        modal.style.display = "flex";
+    });
 }
 
 
 // --------------------------- סגירת החלון ---------------------------
-if(closeBtn){
+if (closeBtn) {
 
     closeBtn.addEventListener("click", function () {
 
         modal.style.display = "none";
-
     });
-
 }
 
 
-if(cancelBtn){
+if (cancelBtn) {
 
     cancelBtn.addEventListener("click", function () {
 
         modal.style.display = "none";
 
     });
-
 }
 
 
@@ -91,11 +86,9 @@ if(cancelBtn){
 
 window.addEventListener("click", function (event) {
 
-    if (event.target === modal)
-    {
+    if (event.target === modal) {
         modal.style.display = "none";
     }
-
 });
 
 
@@ -115,7 +108,6 @@ editAccountTab.addEventListener("click", function () {
 
     editAccountTab.classList.add("active-tab");
     editPersonalTab.classList.remove("active-tab");
-
 });
 
 
@@ -126,7 +118,6 @@ editPersonalTab.addEventListener("click", function () {
 
     editPersonalTab.classList.add("active-tab");
     editAccountTab.classList.remove("active-tab");
-
 });
 
 const saveBtn = document.getElementById("save-edit");
@@ -159,17 +150,16 @@ saveBtn.addEventListener("click", function () {
         streetNoInput
     ];
 
-    fields.forEach(function(field) {
+    fields.forEach(function (field) {
         if (!field.classList.contains("valid")) {
             valid = false;
         }
     });
 
     if (valid) {
-        
+
         updateUser();
     }
-
 });
 
 
@@ -179,18 +169,16 @@ function updateUser() {
 
     let currentUser;
 
-const editingAdminUser = sessionStorage.getItem("editingAdminUser");
+    const editingAdminUser = sessionStorage.getItem("editingAdminUser");
 
-if (editingAdminUser !== null) {
+    if (editingAdminUser !== null) {
 
-    currentUser = users[editingAdminUser];
+        currentUser = users[editingAdminUser];
+    }
 
-}
-else {
-
-    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-
-}
+    else {
+        currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    }
 
     const updatedUser = {
         ...currentUser,
@@ -203,25 +191,23 @@ else {
         city: document.getElementById("city").value,
         street: document.getElementById("street").value,
         streetNo: document.getElementById("street-no").value
-
     };
 
     let index;
 
-if (editingAdminUser !== null) {
+    if (editingAdminUser !== null) {
 
-    index = Number(editingAdminUser);
+        index = Number(editingAdminUser);
+    }
 
-}
-else {
+    else {
 
-    index = users.findIndex(function(user){
+        index = users.findIndex(function (user) {
 
-        return user.username.toLowerCase() === currentUser.username.toLowerCase();
+            return user.username.toLowerCase() === currentUser.username.toLowerCase();
 
-    });
-
-}
+        });
+    }
 
 
     const image = document.getElementById("profile-pic").files[0];
@@ -240,55 +226,45 @@ else {
 
             if (editingAdminUser === null) {
 
-    sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+                sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
 
-    if (typeof loadProfile === "function") {
-        loadProfile();
-    }
+                if (typeof loadProfile === "function") {
+                    loadProfile();
+                }
+            }
 
-}
-else {
+            else {
 
-    if (typeof loadUsers === "function") {
-        loadUsers();
-    }
-
-}
-
+                if (typeof loadUsers === "function") {
+                    loadUsers();
+                }
+            }
             modal.style.display = "none";
-
         };
 
         reader.readAsDataURL(image);
-
     }
 
     else {
-
         users[index] = updatedUser;
 
         localStorage.setItem("users", JSON.stringify(users));
 
         if (editingAdminUser === null) {
 
-    sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+            sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
 
-    if (typeof loadProfile === "function") {
-        loadProfile();
-    }
+            if (typeof loadProfile === "function") {
+                loadProfile();
+            }
+        }
 
-}
-else {
+        else {
 
-    if (typeof loadUsers === "function") {
-        loadUsers();
-    }
-
-}
-
-
+            if (typeof loadUsers === "function") {
+                loadUsers();
+            }
+        }
         modal.style.display = "none";
-
     }
-
 }

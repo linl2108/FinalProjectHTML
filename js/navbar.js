@@ -1,9 +1,9 @@
+
 // --------------------------- תפריט לפי משתמש מחובר ---------------------------
 
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
-if (currentUser)
-{
+if (currentUser) {
     const loginLink = document.getElementById("login-link");
     const signupLink = document.getElementById("signup-link");
 
@@ -18,7 +18,7 @@ if (currentUser)
         event.preventDefault();
 
         sessionStorage.removeItem("currentUser");
-        
+
         window.location.href = "index.html";
 
     });
@@ -26,8 +26,7 @@ if (currentUser)
 
 // --------------------------- מנהל ---------------------------
 
-if (sessionStorage.getItem("isAdmin") === "true")
-{
+if (sessionStorage.getItem("isAdmin") === "true") {
     const loginLink = document.getElementById("login-link");
     const signupLink = document.getElementById("signup-link");
 
@@ -37,7 +36,7 @@ if (sessionStorage.getItem("isAdmin") === "true")
     signupLink.textContent = "Log Out";
     signupLink.href = "#";
 
-    signupLink.addEventListener("click", function(event){
+    signupLink.addEventListener("click", function (event) {
 
         event.preventDefault();
 
@@ -49,19 +48,30 @@ if (sessionStorage.getItem("isAdmin") === "true")
     });
 }
 
+// --------------------------- שאילת שאלה ---------------------------
+
 const askLink = document.querySelector('a[href="ask.html"]');
 
-if (askLink)
-{
-    askLink.addEventListener("click", function (event)
-    {
-        const currentUser = sessionStorage.getItem("currentUser");
-        const isAdmin = sessionStorage.getItem("isAdmin");
+if (askLink) {
 
-        if (!currentUser && isAdmin !== "true")
-        {
+    const isAdmin = sessionStorage.getItem("isAdmin") === "true";
+    const currentUser = sessionStorage.getItem("currentUser");
+
+    // אדמין לא רואה אפשרות לשאול שאלה
+    if (isAdmin) {
+        askLink.style.display = "none";
+    }
+
+    // משתמש לא מחובר מועבר להתחברות
+    else if (!currentUser) {
+
+        askLink.addEventListener("click", function (event) {
+
             event.preventDefault();
             window.location.href = "login.html";
-        }
-    });
+
+        });
+    }
 }
+
+document.body.classList.add("nav-ready");
