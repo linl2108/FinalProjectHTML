@@ -23,6 +23,19 @@
     gap: 15px;
 }
 
+.anonymous-option {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+.anonymous-option input {
+    width: auto;
+    margin: 0;
+}
+
 textarea {
     padding: 10px;
     border-radius: 6px;

@@ -43,6 +43,7 @@
 
             <div class="form-content">
                 <form id="ask-question-form" class="form" novalidate>
+
                     <label>Question title:
                         <input id="question-title" type="text" name="title" required placeholder="type here...">
                         <div id="question-title-error" class="error"></div>
@@ -51,6 +52,11 @@
                     <label>Question content:
                         <textarea id="question-content" type="text" name="content" required placeholder="write you question here..." max=3000></textarea>
                         <div id="question-content-error" class="error"></div>
+                    </label>
+
+                    <label class="anonymous-option">
+                        <input id="question-anonymous-setting" type="checkbox" name="anonymously-posting">
+                        Post anonymously?
                     </label>
 
                     <button type="submit" class="ask-question-btn">Post question</button>
