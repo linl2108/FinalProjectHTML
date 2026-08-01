@@ -198,6 +198,12 @@ resetBtn.addEventListener("click", function() {
     // הסתרת הודעת ניצחון בריסט
     winMessage.classList.add("hidden");
     winMessage.classList.remove("show");
+    
+    if (winSound) {
+        winSound.pause();
+        winSound.currentTime = 0;
+    }
+    
     resetBoardUI();
     
     startBtn.style.display = "block";

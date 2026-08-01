@@ -432,7 +432,7 @@ td{
     }
 
     .ship-input input{
-        width:28px;
+        width:27px;
         height:30px;
         font-size:12px;
         border-radius:8px;
@@ -469,7 +469,7 @@ td{
 
 /* ------------------------- התאמה למובייל לסמארטפונים ------------------------ */
 
-@media (min-width:268px) and (max-width:369px) {
+@media (min-width:259px) and (max-width:369px) {
 
     .board {
         transform: scale(0.85);
