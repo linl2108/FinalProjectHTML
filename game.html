@@ -119,12 +119,22 @@
     </div>
 
 
-    <!-- אנימציית בום -->
+    <!-- אנימציות וסאודנים -->
+    <!-- בום -->
     <div id="boom" class="boom hidden">BOOM!</div>
 
-    <!-- Sound -->
     <audio id="boomSound">
         <source src="audio/boom.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ווינר / ניצחון-->
+    <div id="winMessage" class="win-message hidden">
+        <h1>🎉 WELL DONE! 🎉</h1>
+        <p>You won! All battleships destroyed!</p>
+    </div>
+    
+    <audio id="winSound">
+        <source src="audio/winner.mp3" type="audio/mpeg">
     </audio>
 
     <script src="js/game/ships.js"></script>

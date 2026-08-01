@@ -1,4 +1,7 @@
 
+const winSound = document.getElementById("winSound");
+const winMessage = document.getElementById("winMessage");
+
 let gameActive = false;
 let gameGrid = [];
 let gameShips = [];
@@ -171,15 +174,30 @@ function checkWinState() {
     });
 
     if (activeShips.length === 0) {
+
         gameActive = false;
+
+        if (winSound)
+        {
+            winSound.currentTime = 0;
+            winSound.play().catch(() => {});
+        }
+
         setTimeout(function() {
-            alert("You Win! All battleships destroyed!");
-        }, 300);
+            winMessage.classList.remove("hidden");
+            setTimeout(function(){
+                winMessage.classList.add("show");
+            },50);
+    }, 300);
     }
 }
 
 resetBtn.addEventListener("click", function() {
     gameActive = false;
+
+    // הסתרת הודעת ניצחון בריסט
+    winMessage.classList.add("hidden");
+    winMessage.classList.remove("show");
     resetBoardUI();
     
     startBtn.style.display = "block";

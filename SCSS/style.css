@@ -22,6 +22,34 @@ body {
     direction: ltr;
 }
 
+.mobile-auth{
+    display:none;
+}
+
+.mobile-auth a {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* כפתור Log In במובייל */
+.mobile-auth a:first-child {
+    color: var(--royal-blue);
+}
+
+/* כפתור Sign Up במובייל */
+.mobile-auth a:last-child {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.mobile-auth a:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
 .nav-ready .menu {
     visibility: visible;
 }
@@ -881,8 +909,17 @@ footer {
     /* header */
     .nav-container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+    }
+
+    .mobile-auth{
+        display:flex;
+        gap:10px;
+        align-items:center;
+        margin-left: auto;
+        margin-right: 15px;
+        order:2;
+        font-size: 14px;
     }
 
 /* כפתור המבורגר */
@@ -893,7 +930,10 @@ footer {
     cursor: pointer;
     position: relative;
     z-index: 3000;
+    order:3;
 }
+
+.logo{ order:1;}
 
     /*תפריט צד*/
 .menu {
@@ -1000,6 +1040,12 @@ footer p:first-child {
 .table-wrapper{
     overflow-x:auto;
 }
+
+
+    .menu #login-link,
+    .menu #signup-link {
+        display:none;
+    }
 
 }
 
