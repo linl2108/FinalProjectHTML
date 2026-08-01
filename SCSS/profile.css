@@ -61,6 +61,7 @@
     background-color: var(--royal-blue);
     color: var(--white);
     border-radius: 8px;
+    border-color: var(--royal-blue);
     padding: 10px 18px;
     margin-bottom: 3px;
     margin-top: 15px;
@@ -74,7 +75,7 @@
     background-color: var(--white);
     color: var(--black);
     border-radius: 8px;
-    border-color: var(--light-gray);
+    border-color: var(--very-light-gray);
     padding: 10px 18px;
     margin-bottom: 3px;
     margin-top: 15px;
@@ -85,7 +86,7 @@
 }
 
 .profile-buttons button:hover {
-    color: var(--light-gray);
+    color: var(--very-light-gray);
     transform: translateY(-4px) scale(1.1);
 }
 
