@@ -1,0 +1,107 @@
+:root {
+    --royal-blue: #423ffdef;
+    --white: #ffffff;
+    --black: #000000;
+    --red: #ff4d4d;
+    --green: #09d1a6;
+    --dark-gray: #8c8d8d;
+    --light-gray: #cfd1d1;
+    --very-light-gray: #e0e2e2c7;
+    --light-blue: #569affcb;
+}
+
+/* --------------------------- כרטיס פרופיל --------------------------- */
+.profile-card {
+    width: 420px;
+    margin: 40px auto;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--light-blue);
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.profile-username {
+    color: var(--dark-gray);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.profile-card p {
+    margin: 12px 0;
+    font-size: 17px;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#edit-profile-btn, #game-btn {
+    background-color: var(--royal-blue);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin-bottom: 3px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+#logout-btn {
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 8px;
+    border-color: var(--light-gray);
+    padding: 10px 18px;
+    margin-bottom: 3px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.profile-buttons button:hover {
+    color: var(--light-gray);
+    transform: translateY(-4px) scale(1.1);
+}
+
+/* ------------------------- התאמת הכפתורים בדף משתמש ------------------------- */
+@media (max-width:339px) {
+
+    .profile-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #edit-profile-btn, #game-btn {
+        flex: 0 0 calc(50% - 5px);
+        margin-top: 15px;
+    }
+
+    #logout-btn {
+        flex: 0 0 120px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2px;
+    }
+}

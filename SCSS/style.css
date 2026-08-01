@@ -22,34 +22,6 @@ body {
     direction: ltr;
 }
 
-.mobile-auth{
-    display:none;
-}
-
-.mobile-auth a {
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-/* כפתור Log In במובייל */
-.mobile-auth a:first-child {
-    color: var(--royal-blue);
-}
-
-/* כפתור Sign Up במובייל */
-.mobile-auth a:last-child {
-    background-color: var(--royal-blue);
-    color: var(--white);
-    padding: 10px 18px;
-    border-radius: 8px;
-}
-
-.mobile-auth a:hover {
-    transform: translateY(-4px) scale(1.05);
-}
-
 .nav-ready .menu {
     visibility: visible;
 }
@@ -57,7 +29,6 @@ body {
 .menu {
     visibility: hidden;
 }
-
 
 /* --------------------------- חלק עליון --------------------------- */
 header {
@@ -81,7 +52,7 @@ header {
     direction: ltr;
 }
 
- /*המילה Ask*/
+/*המילה Ask*/
 .logo {
     color: var(--royal-blue);
     font-weight: bold;
@@ -94,7 +65,7 @@ header {
 }
 
 .subtitle {
-    color:var(--black);
+    color: var(--black);
     font-weight: normal;
     font-size: 17px;
     margin-left: 2px;
@@ -128,10 +99,42 @@ header {
     transform: translateY(-4px) scale(1.1);
 }
 
-.site-title{
+.site-title {
     font-size: 30px;
 }
 
+/* --------------------------- אודות --------------------------- */
+
+.about-strip {
+    background-color: var(--white);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.inner-about h1 {
+    color: var(--black);
+}
+
+.inner-about p {
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.inner-about {
+    padding-top: 20px;
+}
+
+/* -------------------------- המבורגר -------------------------- */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
 
 /* --------------------------- דף הבית - תוכן --------------------------- */
 .container {
@@ -199,665 +202,6 @@ header {
     text-align: center;
 }
 
-
-/* --------------------------- אודות --------------------------- */
-
-.about-strip {
-    background-color: var(--white);
-    padding: 10px 20px;
-    text-align: center;
-}
-
-.inner-about h1 {
-    color: var(--black);
-}
-
-.inner-about p {
-    text-align: justify;
-    line-height: 1.9;
-    font-size: 18px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.inner-about {
-    padding-top: 20px;
-}
-
-
-/* --------------------------- שאל שאלה --------------------------- */
-
-.ask-question-strip {
-    background-color: var(--white);
-    padding: 10px 20px;
-    text-align: center;
-}
-
-.ask-question-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-textarea {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    font-family: inherit;
-}
-
-.ask-question-btn {
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 8px;
-    border-color: var(--light-gray);
-    padding: 12px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-
-
-/* --------------------------- הרשמה --------------------------- */
-
-.hidden {
-    display: none;
-}
-
-.white-bubble {
-    background-color: var(--white);
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 0;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    text-align: left;
-}
-
-.form-content {
-    padding: 30px 40px;
-}
-
-.white-bubble h2 {
-    text-align: center;
-    color: var(--black);
-    margin-bottom: 25px;
-    padding-top: 12px;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    color: var(--black);
-}
-
-input {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    font-family: inherit;
-}
-
-/* --------------------------- שגיאות בטופס --------------------------- */
-.error {
-    display: block;
-    min-height: 14px;
-    color: var(--red);
-    font-size: 13px;
-    margin-top: 1px;
-    font-weight: normal;
-    margin-bottom: 3px;
-}
-
-.invalid {
-    border: 2px solid var(--red);
-}
-
-.valid {
-    border: 2px solid var(--green);
-}
-
-
-/* --------------------------- שלבים בטופס וכפתורים --------------------------- */
-
-.submit-btn,
-.back-btn,
-.continue-btn {
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 8px;
-    border-color: var(--light-gray);
-    padding: 12px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-.submit-btn:hover,
-.back-btn:hover,
-.continue-btn:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 5px 5px var(--dark-gray);
-}
-
-.continue-btn {
-    display: block;
-    margin-left: auto;
-}
-
-.buttons-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.back-btn,
-.submit-btn {
-    flex: 0 0 120px;
-}
-
-#step2 {
-    display: none;
-}
-
-.step {
-    background-color: var(--light-gray);
-    color: var(--black);
-    padding: 15px 20px;
-    display: inline-block;
-    flex: 1;
-    text-align: center;
-}
-
-.active {
-    background-color: var(--royal-blue);
-    color:var(--white);
-}
-
-.steps {
-    display: flex;
-    overflow: hidden;
-    font-weight: bold;
-    border-radius: 12px 12px 0 0;
-    border-bottom: 1px solid var(--light-gray);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.form-section {
-    opacity: 1;
-    transition: opacity 0.35s ease;
-}
-
-.form-section.hide {
-    opacity: 0;
-}
-
-
-
-/* --------------------------- התחברות --------------------------- */
-.login-btn {
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 8px;
-    border-color: var(--light-gray);
-    padding: 12px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-.form-content {
-    padding: 30px 40px;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.login-note p {
-    color: var(--dark-gray);
-    font-size: 16px;
-    font-weight: normal;
-}
-
-
-/* --------------------------- נראות סיסמא --------------------------- */
-
-.password-container {
-    position: relative;
-    width: 100%;
-}
-
-
-.password-container input {
-    width: 100%;
-    box-sizing: border-box;
-    padding-right: 45px;
-}
-
-
-.toggle-password {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 22px;
-    height: 22px;
-
-    cursor: pointer;
-
-    color: #777;
-
-    z-index: 2;
-}
-
-
-.toggle-password:hover {
-    color: #444;
-}
-
-
-
-
-/* --------------------------- כרטיס פרופיל --------------------------- */
-.profile-card
-{
-    width: 420px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
-.profile-image
-{
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--light-blue);
-    margin-bottom: 20px;
-}
-
-.profile-card h2
-{
-    margin-bottom: 10px;
-    color: #2b2b2b;
-}
-
-.profile-username
-{
-    color: gray;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.profile-card p
-{
-    margin: 12px 0;
-    font-size: 17px;
-}
-
-.profile-buttons {
-    display:flex;
-    justify-content: center;
-    gap:15px;
-    margin-top:25px;
-}
-
-#edit-profile-btn,
-#game-btn {
-    background-color: var(--royal-blue);
-    color: var(--white);
-    border-radius: 8px;
-    padding: 10px 18px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-#logout-btn {
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 8px;
-    border-color: var(--light-gray);
-    padding: 10px 18px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-.profile-buttons button:hover {
-    color: var(--light-gray);
-    transform: translateY(-4px) scale(1.1);
-}
-
-
-/* --------------------------- Post Question Modal --------------------------- */
-
-.posting-modal-content{
-    background: var(--white);
-    width:320px;
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-.posting-modal-content h3{
-    margin-bottom: 30px;
-    font-size: 19px;
-}
-
-#close-success{
-    background: var(--royal-blue);
-    color: var(--white);
-}
-
-.posting-modal-content button{
-    width:120px;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:.25s;
-}
-
-#close-success:hover{
-    transform:translateY(-3px);
-}
-
-
-/* --------------------------- Edit Profile Modal --------------------------- */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.45);
-    justify-content:center;
-    align-items:center;
-    padding:25px;
-    z-index:1500;
-}
-
-.modal-content {
-    background: white;
-    width: 600px;
-    max-width: 85vw;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 18px;
-    padding: 30px;
-    position: relative;
-}
-
-.modal-body{
-    padding:30px;
-    overflow-y:auto;
-    max-height:90vh;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 28px;
-}
-
-.modal-steps{
-    display:flex;
-    gap:15px;
-    margin:20px 0;
-}
-
-.modal-steps button{
-    flex:1;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:#ececec;
-}
-
-.active-tab{
-    background:#1f6fff !important;
-    color:white;
-}
-
-.modal-content label{
-    display:block;
-    margin-bottom:15px;
-}
-
-.modal-content input{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-}
-
-.modal-buttons{
-    display:flex;
-    justify-content:flex-end;
-    gap:15px;
-    margin-top:25px;
-}
-
-#cancel-edit,
-#save-edit {
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 8px;
-    border-color: var(--light-gray);
-    padding: 12px;
-    margin-bottom: 3px;
-    margin-top: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-
-/*
-input:focus {
-    outline: none;
-    border: 2px solid var(--purple-primary);
-}
-
-input:focus:invalid {
-    border: 2px solid var(--error);
-}
-
-input:valid:not(:placeholder-shown) {
-    border: 2px solid var(--success);
-}
-
-.radio-row, .check-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 5px 0;
-}
-
-.radio-row label {
-    flex-direction: row;
-    font-weight: normal;
-    margin-left: 10px;
-}*/
-
-
-/* --------------------------- מנהל / אדמין --------------------------- */
-
-.admin-card{
-    width:100%;
-    max-width:1400px;
-    margin:40px auto;
-    padding:30px;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.admin-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-.admin-table thead{
-    background: var(--white);
-    color: var(--black);
-}
-
-.admin-table th{
-    padding:18px 15px;
-    text-align:center;
-    font-size:15px;
-    font-weight:bold;
-}
-
-.admin-table td{
-    padding:18px 15px;
-    text-align:center;
-    vertical-align:middle;
-}
-
-.admin-table tbody tr{
-    border-bottom: 1px solid var(--light-gray);
-}
-
-.admin-table tbody tr:last-child{
-    border-bottom: none;
-}
-
-.admin-profile-pic{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--light-blue);
-}
-
-.actions{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-}
-
-.action-btn{
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:10px;
-    background:white;
-    cursor:pointer;
-    font-size:20px;
-    transition:.25s;
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-}
-
-.action-btn:hover{
-    transform:translateY(-3px);
-}
-
-.edit-btn:hover{
-    background:#d9ecff;
-}
-
-.delete-btn:hover{
-    background:#ffe0e0;
-}
-
-/* -------------------- Delete Modal - אדמין שיכול למחוק משתמש -------------------- */
-
-.delete-modal-content{
-    background:white;
-    width:360px;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-.delete-modal-content h3{
-    margin-bottom:30px;
-    font-size:22px;
-}
-
-.delete-buttons{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-}
-
-.delete-buttons button{
-    width:120px;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:.25s;
-}
-
-#confirm-delete{
-    background:#ff4d4d;
-    color:white;
-}
-
-#cancel-delete{
-    background:#ececec;
-}
-
-.delete-buttons button:hover{
-    transform:translateY(-3px);
-}
-
-
-
-/*צקבוקס מוסתר*/
-#menu-toggle {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-}
-
-
-
 /* --------------------------- החלק התחתון של האתר ---------------------------- */
 
 footer {
@@ -894,16 +238,12 @@ footer {
     margin-left: 5px;
 }
 
-
-
 .table-wrapper {
-    width:100%;
-    overflow-x:auto;
+    width: 100%;
+    overflow-x: auto;
 }
 
-
 /* ------------------------- התאמת האתר למובייל ------------------------- */
-
 @media (max-width: 1040px) {
 
     /* header */
@@ -912,62 +252,60 @@ footer {
         align-items: center;
     }
 
-    .mobile-auth{
-        display:flex;
-        gap:10px;
-        align-items:center;
+    .mobile-auth {
+        display: flex;
+        gap: 10px;
+        align-items: center;
         margin-left: auto;
         margin-right: 15px;
-        order:2;
+        order: 2;
         font-size: 14px;
     }
 
-/* כפתור המבורגר */
-.hamburger {
-    display: block;
-    color: var(--black);
-    font-size: 30px;
-    cursor: pointer;
-    position: relative;
-    z-index: 3000;
-    order:3;
-}
+    /* כפתור המבורגר */
+    .hamburger {
+        display: block;
+        color: var(--black);
+        font-size: 30px;
+        cursor: pointer;
+        position: relative;
+        z-index: 3000;
+        order: 3;
+    }
 
-.logo{ order:1;}
+    .logo {
+        order: 1;
+    }
 
     /*תפריט צד*/
-.menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 220px;
-    height: 100vh;
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 220px;
+        height: 100vh;
+        background-color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        gap: 25px;
+        transition: right 0.3s ease;
+        z-index: 2000;
+    }
 
-    background-color: var(--white);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 100px;
-    gap: 25px;
-
-    transition: right 0.3s ease;
-
-    z-index: 2000;
-}
-
-    #menu-toggle:checked ~ .menu {
+    #menu-toggle:checked~.menu {
         right: 0;
     }
 
-    .menu a {  margin: 0;
+    .menu a {
+        margin: 0;
         font-size: 20px;
     }
 
     .subtitle {
-    display: none;
-}
+        display: none;
+    }
 
     .grid-layout {
         grid-template-columns: 1fr;
@@ -986,89 +324,60 @@ footer {
         height: 200px;
     }
 
-.white-bubble {
-    padding: 10px;
-}
-
-.form-content {
-    padding: 15px;
-}
-    .copyright {
-    font-size: 13px;
-    margin-top: 40px;
-}
-
-.profile-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-}
-
-.profile-image {
-    max-width: 100%;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-footer p {
-    line-height: 1.5;
-}
-
-footer p:first-child {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.social {
-    display: inline;
-}
-.separator {
-    display: none;
-}
-
-.admin-card{
-    padding:15px;
-}
-
-.admin-table {
-    min-width: 1000px;
-}
-
-.table-wrapper{
-    overflow-x:auto;
-}
-
-
-    .menu #login-link,
-    .menu #signup-link {
-        display:none;
+    .white-bubble {
+        padding: 10px;
     }
 
-}
+    .form-content {
+        padding: 15px;
+    }
 
+    .copyright {
+        font-size: 13px;
+        margin-top: 40px;
+    }
 
+    .profile-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
 
-/* ------------------------- התאמת הכפתורים בדף משתמש ------------------------- */
-@media (max-width:339px) {
+    .profile-image {
+        max-width: 100%;
+    }
 
-    .profile-buttons {
-        flex-wrap: wrap;
+    body {
+        overflow-x: hidden;
+    }
+
+    footer p {
+        line-height: 0.8;
+    }
+
+    footer p:first-child {
+        display: flex;
+        flex-direction: column;
         gap: 10px;
     }
 
-    #edit-profile-btn,
-    #game-btn {
-        flex: 0 0 calc(50% - 5px);
-        margin-top:15px;
+    .social {
+        display: inline;
     }
 
-    #logout-btn {
-        flex: 0 0 120px;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top: 2px;
+    .separator {
+        display: none;
+    }
+
+    .admin-card {
+        padding: 15px;
+    }
+
+    .admin-table {
+        min-width: 1000px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
     }
 }

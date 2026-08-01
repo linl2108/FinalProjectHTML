@@ -4,7 +4,7 @@
     --light-red: #ff5500;
     --bordo: #b40000;
     --dark-gray: #8d8d8d;
-    --gray: rgba(0,0,0,.3);
+    --gray: rgba(0, 0, 0, .3);
     --light-blue: #86b4f8;
     --baby-blue: #e5f1fc;
     --yellow: yellow;
@@ -12,36 +12,36 @@
 }
 
 /* -------------------- עיצוב כללי לכל הדף של משחק -------------------- */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Comic Sans MS", cursive;
 }
 
-body{
-    background:linear-gradient(135deg,#bedbfd,#0d86f8,#76a5fc);
+body {
+    background: linear-gradient(135deg, #bedbfd, #0d86f8, #76a5fc);
     background-attachment: fixed;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 /* -------------------- הבועה שמכילה את הכפתורים והבחירות -------------------- */
 
-.container{
-    width:95%;
+.container {
+    width: 95%;
     max-width: 1400px;
-    display:flex;
+    display: flex;
     height: 550px;
-    justify-content:space-between;
-    align-items:flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 50px;
 }
 
-.settings{
+.settings {
     width: 280px;
     background: var(--baby-blue);
     flex-shrink: 0;
@@ -52,93 +52,93 @@ body{
 }
 
 /*כותרות של הבועה*/
-.settings h2{
+.settings h2 {
     font-size: 17px;
-    text-align:center;
-    margin-bottom:9px;
-    letter-spacing:2px;
+    text-align: center;
+    margin-bottom: 9px;
+    letter-spacing: 2px;
 }
 
 
 /* -------------------- הגדרות לבחירה -------------------- */
 
-.board-sizes{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:8px;
-    margin-bottom:30px;
-}
-
-.board-sizes label{
-    display:flex;
-    align-items:center;
+.board-sizes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    font-size:18px;
-    cursor:pointer;
+    margin-bottom: 30px;
 }
 
-.ship-input{
-    display:flex;
+.board-sizes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.ship-input {
+    display: flex;
     justify-content: center;
-    align-items:center;
-    margin-bottom:8px;
+    align-items: center;
+    margin-bottom: 8px;
 }
 
-.ship-input label{
+.ship-input label {
     margin-right: 8px;
     font-size: 18px;
-    line-height:0.8;
+    line-height: 0.8;
 }
 
 
 /* -------------------- האינפוט של הכמויות -------------------- */
 
-.ship-input input{
-    width:45px;
-    height:50px;
+.ship-input input {
+    width: 45px;
+    height: 50px;
     border-radius: 12px;
     border: 2px solid var(--black);
-    text-align:center;
-    font-size:17px;
-    font-weight:bold;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
     background: var(--white);
-    outline:none;
+    outline: none;
 }
 
 
 /*-------------------- כפתורים -------------------- */
 
-button{
-    width:100%;
-    margin-top:10px;
-    padding:10px;
-    border:none;
-    border-radius:10px;
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
     background: var(--light-blue);
     color: var(--black);
-    font-size:17px;
+    font-size: 17px;
     font-weight: bold;
-    cursor:pointer;
-    transition:.25s;
+    cursor: pointer;
+    transition: .25s;
 }
 
 /* -------------------- אפקטים לכפתורים -------------------- */
 
-button:hover{
-    transform:scale(1.04);
+button:hover {
+    transform: scale(1.04);
 }
 
 
 /* -------------------- הודעת שגיאה -------------------- */
 
-#message{
+#message {
     margin-top: 10px;
     text-align: center;
     color: var(--bordo);
     font-size: 15px;
     font-weight: normal;
-    
-    height: 30px; 
+
+    height: 30px;
     line-height: 1.2;
     display: flex;
     align-items: center;
@@ -148,91 +148,95 @@ button:hover{
 
 /* -------------------- לוח המשחק -------------------- */
 
-.game-section{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.game-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 20px;
 }
 
-.board{
-    display:grid;
-    gap:3px;
+.board {
+    display: grid;
+    gap: 3px;
     background: var(--black);
-    padding:1px;
-    border:2px solid var(--black);
+    padding: 1px;
+    border: 2px solid var(--black);
 }
 
-.cell{
-    width:42px;
-    height:42px;
+.cell {
+    width: 42px;
+    height: 42px;
     background: var(--dark-gray);
-    cursor:pointer;
-    transition:.2s;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.cell:hover{
-    filter:brightness(1.15);
+.cell:hover {
+    filter: brightness(1.15);
 }
 
-.cell.miss{
-    background:#5dbef7;
+.cell.miss {
+    background: #5dbef7;
 }
 
-.cell.hit{
+.cell.hit {
     background: var(--orange);
 }
 
-.ships-left{
+.ships-left {
     width: 250px;
-    flex-shrink: 0; /* מונע מהלוח למעוך את הטבלה כשהוא גדל */
+    flex-shrink: 0;
+    /* מונע מהלוח למעוך את הטבלה כשהוא גדל */
     box-sizing: border-box;
 }
 
 
 /* -------------------- בר ההתקדמות במשחק -------------------- */
 
-table{
+table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 1 8px;
-    table-layout: fixed; /* שומר על רוחב עמודות קבוע ולא מזיז אותן לפי אורך הטקסט */
+    table-layout: fixed;
+    /* שומר על רוחב עמודות קבוע ולא מזיז אותן לפי אורך הטקסט */
 }
 
-th{
+th {
     background: var(--light-blue);
     color: var(--black);
     padding: 12px;
     font-size: 18px;
     border-radius: 10px;
-    height: 45px; /* גובה קבוע לכותרת */
+    height: 45px;
+    /* גובה קבוע לכותרת */
 }
 
-td{
+td {
     background: var(--baby-blue);
     padding: 12px;
-    text-align:center;
+    text-align: center;
     font-size: 16px;
     border-radius: 10px;
-    height: 45px; /* גובה קבוע לשורות */
+    height: 45px;
+    /* גובה קבוע לשורות */
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.boom{
-    position:fixed;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    font-size:60px;
+.boom {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
     color: var(--light-red);
-    text-shadow:0 0 25px var(--yellow);
-    animation:boomAnimation .8s ease;
-    pointer-events:none;
-    z-index:1000;
+    text-shadow: 0 0 25px var(--yellow);
+    animation: boomAnimation .8s ease;
+    pointer-events: none;
+    z-index: 1000;
 }
 
 .win-message {
@@ -246,7 +250,7 @@ td{
     border-radius: 20px;
     text-align: center;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
     transition: 0.4s ease;
     z-index: 2000;
@@ -265,21 +269,21 @@ td{
 
 /* -------------------- אנימציית בום -------------------- */
 
-@keyframes boomAnimation{
+@keyframes boomAnimation {
 
-    0%{
-        transform:translate(-50%,-50%) scale(.2);
-        opacity:0;
+    0% {
+        transform: translate(-50%, -50%) scale(.2);
+        opacity: 0;
     }
 
-    40%{
-        transform:translate(-50%,-50%) scale(1.4);
-        opacity:1;
+    40% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 1;
     }
 
-    100%{
-        transform:translate(-50%,-50%) scale(2);
-        opacity:0;
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
     }
 
 }
@@ -287,165 +291,165 @@ td{
 
 /* -------------------- התאמה למובייל -------------------- */
 
-@media (max-width:810px){
+@media (max-width:810px) {
 
-    body{
-        min-height:100dvh;
-        height:100dvh;
-        overflow:hidden;
-        align-items:flex-start;
-        padding-top:10px;
+    body {
+        min-height: 100dvh;
+        height: 100dvh;
+        overflow: hidden;
+        align-items: flex-start;
+        padding-top: 10px;
     }
 
-    .container{
-        width:95%;
-        height:100dvh;
-        display:flex;
-        flex-direction:column;
-        justify-content:space-between;
-        gap:5px;
+    .container {
+        width: 95%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
     }
 
-/* ------------------------- בר הספינות למעלה ------------------------ */
+    /* ------------------------- בר הספינות למעלה ------------------------ */
 
-    .ships-left{
-        order:1;
-        width:100%;
-        height:auto;
+    .ships-left {
+        order: 1;
+        width: 100%;
+        height: auto;
     }
 
     .ships-left table,
     .ships-left tbody,
-    .ships-left tr{
-        display:flex;
-        width:100%;
+    .ships-left tr {
+        display: flex;
+        width: 100%;
     }
 
-    .ships-left thead{
-        display:none;
+    .ships-left thead {
+        display: none;
     }
 
-    .ships-left tbody{
-        justify-content:space-around;
-        gap:8px;
+    .ships-left tbody {
+        justify-content: space-around;
+        gap: 8px;
     }
 
-    .ships-left tr{
-        flex-direction:column;
-        align-items:center;
-        flex:1;
+    .ships-left tr {
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
     }
 
-    .ships-left td{
-        width:100%;
-        height:auto;
-        padding:5px;
-        font-size:12px;
+    .ships-left td {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        font-size: 12px;
     }
 
-    .ships-left td:first-child{
-        background:transparent;
-        padding-bottom:3px;
-        font-weight:bold;
+    .ships-left td:first-child {
+        background: transparent;
+        padding-bottom: 3px;
+        font-weight: bold;
     }
 
-    .ships-left td:last-child{
-        background:var(--light-blue);
-        border-radius:12px;
-        font-size:12px;
-        font-weight:bold;
-    }
-
-
-/* ------------------------- לוח המשחק ------------------------ */
-
-    .game-section{
-        order:2;
-        flex:1;
-        width:100%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:0;
-        min-height:0;
+    .ships-left td:last-child {
+        background: var(--light-blue);
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
     }
 
 
-    .board{
-        grid-template-columns:repeat(var(--size), min(5vw, 30px)) !important;
-        gap:2px;
-        padding:2px;
+    /* ------------------------- לוח המשחק ------------------------ */
+
+    .game-section {
+        order: 2;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        min-height: 0;
+    }
+
+
+    .board {
+        grid-template-columns: repeat(var(--size), min(5vw, 30px)) !important;
+        gap: 2px;
+        padding: 2px;
         transform: scale(0.65);
         transform-origin: center;
     }
 
-    .cell{
+    .cell {
         width: min(5vw, 28px);
         height: min(5vw, 28px);
     }
 
 
-/* ------------------------- פאנל הגדרות למטה ------------------------ */
+    /* ------------------------- פאנל הגדרות למטה ------------------------ */
 
-    .settings{
-        order:3;
-        width:100%;
-        padding:10px 15px;
-        border-radius:15px;
+    .settings {
+        order: 3;
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 15px;
     }
 
-    .settings h2{
-        font-size:10px;
-        margin-bottom:5px;
+    .settings h2 {
+        font-size: 10px;
+        margin-bottom: 5px;
     }
 
     /* BOARD SIZE בשורה */
-    .board-sizes{
-        display:flex;
-        justify-content:center;
-        flex-wrap:nowrap;
-        gap:8px;
-        margin-bottom:10px;
+    .board-sizes {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-bottom: 10px;
     }
 
-    .board-sizes label{
-        font-size:12px;
-        gap:3px;
+    .board-sizes label {
+        font-size: 12px;
+        gap: 3px;
     }
 
     /* BATTLESHIPS בשורה */
-    .ship-inputs-container{
-        display:flex;
-        justify-content:center;
-        gap:8px;
+    .ship-inputs-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
     }
 
-    .ship-input{
-        flex-direction:row;
-        justify-content:center;
-        margin:0;
+    .ship-input {
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
     }
 
-    .ship-input label{
-        font-size:12px;
-        margin-right:3px;
+    .ship-input label {
+        font-size: 12px;
+        margin-right: 3px;
     }
 
-    .ship-input input{
-        width:27px;
-        height:30px;
-        font-size:12px;
-        border-radius:8px;
+    .ship-input input {
+        width: 27px;
+        height: 30px;
+        font-size: 12px;
+        border-radius: 8px;
     }
 
-    button{
-        margin-top:5px;
-        padding:6px;
-        font-size:12px;
+    button {
+        margin-top: 5px;
+        padding: 6px;
+        font-size: 12px;
     }
 
-    #message{
-        display:none;
+    #message {
+        display: none;
     }
 }
 

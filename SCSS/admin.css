@@ -1,54 +1,68 @@
-/* --------------------------- דף מנהל --------------------------- */
-
-/* -------------------- טבלת משתמשים שמנוהלת ע"י המנהל -------------------- */
-
-.admin-card{
-    width:100%;
-    max-width:1400px;
-    margin:40px auto;
-    padding:30px;
-    border-radius:20px;
-    overflow:hidden;
+:root {
+    --royal-blue: #423ffdef;
+    --white: #ffffff;
+    --black: #000000;
+    --red: #ff4d4d;
+    --green: #09d1a6;
+    --dark-gray: #8c8d8d;
+    --light-gray: #cfd1d1;
+    --very-light-gray: #e0e2e2c7;
+    --light-blue: #569affcb;
+    --blue: #1f6fff;
+    --rgba-dark-gray: rgba(0, 0, 0, .45);
+    --rgba-light-gray: rgba(0, 0, 0, 0.08);
+    --baby-pink: #ffe0e0;
+    --baby-blue: #d9ecff;
 }
 
-.admin-table{
-    width:100%;
-    border-collapse:collapse;
+/* --------------------------- מנהל / אדמין --------------------------- */
+
+.admin-card {
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-/* כותרות בטבלה */
+.white-bubble.admin-card {
+    width: 100%;
+    max-width: 1400px;
+}
 
-.admin-table thead{
+.admin-table thead {
     background: var(--white);
     color: var(--black);
 }
 
-.admin-table th{
-    padding:18px 15px;
-    text-align:center;
-    font-size:15px;
-    font-weight:bold;
+.admin-table th {
+    padding: 18px 15px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.admin-table td{
-    padding:18px 15px;
-    text-align:center;
-    vertical-align:middle;
+.admin-table td {
+    padding: 18px 15px;
+    text-align: center;
+    vertical-align: middle;
 }
 
-
-/* תוכן הטבלה */
-
-.admin-table tbody tr{
+.admin-table tbody tr {
     border-bottom: 1px solid var(--light-gray);
 }
 
-.admin-table tbody tr:last-child{
+.admin-table tbody tr:last-child {
     border-bottom: none;
 }
 
-.admin-profile-pic{
+.admin-profile-pic {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -56,83 +70,77 @@
     border: 3px solid var(--light-blue);
 }
 
-.actions{
-    display:flex;
-    justify-content:center;
-    gap:12px;
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
-
-/* לחצנים לעדכון/מחיקה */
-
-.action-btn{
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:10px;
-    background:white;
-    cursor:pointer;
-    font-size:20px;
-    transition:.25s;
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-}
-
-.action-btn:hover{
-    transform:translateY(-3px);
-}
-
-.edit-btn:hover{
-    background:#d9ecff;
-}
-
-.delete-btn:hover{
-    background:#ffe0e0;
-}
-
-/* ---------------- מחיקה ---------------- */
-
-.delete-modal-content{
+.action-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
     background: var(--white);
-    width:360px;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    cursor: pointer;
+    font-size: 20px;
+    transition: .25s;
+    box-shadow: 0 2px 8px var(--rgba-light-gray);
 }
 
-.delete-modal-content h3{
-    margin-bottom:30px;
-    font-size:22px;
+.action-btn:hover {
+    transform: translateY(-3px);
 }
 
-.delete-buttons{
-    display:flex;
-    justify-content:center;
-    gap:18px;
+.edit-btn:hover {
+    background: var(--baby-blue);
 }
 
-.delete-buttons button{
-    width:120px;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:.25s;
+.delete-btn:hover {
+    background: var(--baby-pink);
 }
 
-#confirm-delete{
+/* -------------------- Delete Modal - אדמין יכול למחוק משתמש -------------------- */
+
+.delete-modal-content {
+    background: var(--white);
+    width: 360px;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--rgba-dark-gray);
+}
+
+.delete-modal-content h3 {
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+.delete-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.delete-buttons button {
+    width: 120px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .25s;
+}
+
+#confirm-delete {
     background: var(--red);
     color: var(--white);
 }
 
-#cancel-delete{
-    background:var(--very-light-gray);
+#cancel-delete {
+    background: var(--very-light-gray);
 }
 
-.delete-buttons button:hover{
-    transform:translateY(-3px);
+.delete-buttons button:hover {
+    transform: translateY(-3px);
 }
-
-
-/* -------------------- התאמה למובייל -------------------- */
