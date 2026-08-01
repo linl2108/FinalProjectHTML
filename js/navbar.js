@@ -45,7 +45,7 @@ if (sessionStorage.getItem("isAdmin") === "true") {
 }
 
 // --------------------------- שאילת שאלה ---------------------------
-const askLink = document.querySelector('a[href="ask.html"]');
+const askLink = document.querySelector('a[href*="ask.html"]');
 
 if (askLink) {
 
