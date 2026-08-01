@@ -1,9 +1,3 @@
-setupPasswordToggle(
-    "password",
-    "eye-open",
-    "eye-closed"
-);
-
 
 // --------------------------- פתיחת החלון ---------------------------
 

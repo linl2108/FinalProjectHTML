@@ -1,8 +1,4 @@
-setupPasswordToggle(
-    "password",
-    "eye-open",
-    "eye-closed"
-);
+
 // --------------------------- כפתור המשך ---------------------------
 
 const continueBtn = document.getElementById("continue-btn");
@@ -133,5 +129,4 @@ form.addEventListener("submit", function (event) {
     if (valid) {
         saveUser();
     }
-
 });

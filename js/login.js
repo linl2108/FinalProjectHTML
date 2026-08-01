@@ -1,8 +1,4 @@
-setupPasswordToggle(
-    "password",
-    "eye-open",
-    "eye-closed"
-);
+
 // --------------------------- התחברות ---------------------------
 
 const loginForm = document.getElementById("login-form");
