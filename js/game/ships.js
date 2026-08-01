@@ -8,7 +8,9 @@ function canPlaceShip(grid, row, col, size, direction, boardSize) {
                 if (grid[r][c] !== -1) return false;
             }
         }
-    } else {
+    } 
+    
+    else {
         if (row + size > boardSize) return false;
         for (let r = Math.max(0, row - 1); r <= Math.min(boardSize - 1, row + size); r++) {
             for (let c = Math.max(0, col - 1); c <= Math.min(boardSize - 1, col + 1); c++) {
@@ -24,7 +26,7 @@ function simulatePlacement(shipCounts, boardSize) {
     let grid = Array.from({ length: boardSize }, () => Array(boardSize).fill(-1));
     let shipList = [];
 
-    // יצירת רשימה ומיוון מהגדול לקטן (5 down to 2)
+    // יצירת רשימה ומיוון מהגדול לקטן
     [5, 4, 3, 2].forEach(size => {
         for (let i = 0; i < (shipCounts[size] || 0); i++) {
             shipList.push(size);
@@ -39,7 +41,7 @@ function simulatePlacement(shipCounts, boardSize) {
         while (!placed && attempts < maxAttempts) {
             attempts++;
 
-            // בחירת כיוון באמצעות if-else
+            // בחירת כיוון
             let direction = 'vertical';
             if (Math.random() < 0.5) {
                 direction = 'horizontal';
@@ -96,7 +98,7 @@ function generateShipPositions(shipCounts, boardSize) {
                         let r = row;
                         let c = col;
 
-                        // חישוב המיקומים בעזרת if-else
+                        // חישוב המיקומים בעזרת איפים
                         if (direction === 'horizontal') {
                             c = col + s;
                         } else {

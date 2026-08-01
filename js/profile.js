@@ -1,7 +1,6 @@
 
 
 // --------------------------- הצגת פרטי המשתמש ---------------------------
-
 function loadProfile() {
 
     const loggedUser = JSON.parse(sessionStorage.getItem("currentUser"));
@@ -10,17 +9,13 @@ function loadProfile() {
         return;
     }
 
-    document.getElementById("profile-name").textContent =
-        loggedUser.fname + " " + loggedUser.lname;
+    document.getElementById("profile-name").textContent = loggedUser.fname + " " + loggedUser.lname;
 
-    document.getElementById("profile-username").textContent =
-        "@" + loggedUser.username;
+    document.getElementById("profile-username").textContent = "@" + loggedUser.username;
 
-    document.getElementById("profile-email").textContent =
-        loggedUser.mail;
+    document.getElementById("profile-email").textContent = loggedUser.mail;
 
-    document.getElementById("profile-bday").textContent =
-        loggedUser.bday;
+    document.getElementById("profile-bday").textContent = loggedUser.bday;
 
     document.getElementById("profile-address").textContent =
         loggedUser.city + ", " +
@@ -28,7 +23,6 @@ function loadProfile() {
         loggedUser.streetNo;
 
     document.getElementById("profile-image").src = loggedUser.profilePic;
-
 }
 
 loadProfile();
@@ -40,13 +34,10 @@ gameBtn.addEventListener("click", function () {
 });
 
 // --------------------------- כפתור יציאה (Logout) ---------------------------
-
 const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", function () {
 
     sessionStorage.removeItem("currentUser");
-
     window.location.href = "index.html";
-
 });

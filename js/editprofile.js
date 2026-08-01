@@ -42,7 +42,6 @@ function fillForm() {
 
 }
 
-
 const closeBtn = document.getElementById("close-modal");
 const cancelBtn = document.getElementById("cancel-edit");
 if (editBtn) {
@@ -54,7 +53,6 @@ if (editBtn) {
         modal.style.display = "flex";
     });
 }
-
 
 // --------------------------- סגירת החלון ---------------------------
 if (closeBtn) {
@@ -235,7 +233,6 @@ function updateUser() {
             }
             modal.style.display = "none";
         };
-
         reader.readAsDataURL(image);
     }
 

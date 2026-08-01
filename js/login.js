@@ -1,6 +1,5 @@
 
 // --------------------------- התחברות ---------------------------
-
 const loginForm = document.getElementById("login-form");
 
 loginForm.addEventListener("submit", function (event) {
@@ -11,7 +10,6 @@ loginForm.addEventListener("submit", function (event) {
     const password = document.getElementById("password").value;
 
     // --------------------------- התחברות מנהל ---------------------------
-
     if (username === "admin" && password === "admin1234admin")
     {
         sessionStorage.setItem("isAdmin", "true");
@@ -23,13 +21,7 @@ loginForm.addEventListener("submit", function (event) {
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-
-// -------------------------------- הצגת/הסתרת סיסמא ------------------------
-
-
-
 // --------------------------- חיפוש המשתמש ---------------------------
-
     const user = users.find(function (user) {
 
         return user.username.toLowerCase() === username && user.password === password;
@@ -45,5 +37,4 @@ loginForm.addEventListener("submit", function (event) {
     sessionStorage.setItem("currentUser", JSON.stringify(user));
 
     window.location.href = "index.html";
-
 });

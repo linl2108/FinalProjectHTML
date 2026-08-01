@@ -1,8 +1,6 @@
 
 // --------------------------- אובייקט משתמש ---------------------------
-
 class User {
-
     constructor(username, password, profilePic, fname, lname, mail, bday, city, street, streetNo) {
         this.username = username;
         this.password = password;
@@ -17,16 +15,12 @@ class User {
     }
 }
 
-
 // --------------------------- יצירת משתמש ---------------------------
-
 function createUser() {
-
     return new User(
-
         document.getElementById("username").value.trim().toLowerCase(),
         document.getElementById("password").value,
-        "", // התמונה תישמר אחר כך ע"י FileReader
+        "", // התמונה תישמר אחר כך ע"י פיילרידר
         document.getElementById("fname").value,
         document.getElementById("lname").value,
         document.getElementById("mail").value.trim().toLowerCase(),
@@ -39,7 +33,6 @@ function createUser() {
 
 
 // --------------------------- בדיקת שם משתמש אם קיים/לא קיים במערכת ---------------------------
-
 function usernameExists(username) {
     console.log("usernameExists called:", username);
 
@@ -72,9 +65,7 @@ function usernameExists(username) {
     });
 }
 
-
 // --------------------------- בדיקת אימייל אם קיים/לא קיים במערכת ---------------------------
-
 function emailExists(mail) {
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -109,9 +100,7 @@ function emailExists(mail) {
     });
 }
 
-
 // --------------------------- שמירת משתמש ---------------------------
-
 function saveUser() {
 
     const mail = document.getElementById("mail").value;

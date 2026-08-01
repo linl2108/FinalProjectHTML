@@ -7,7 +7,6 @@ const usernameRegex = /^[A-Za-z0-9!@#$%^&*()_+\-]+$/;
 usernameInput.addEventListener("input", function () {
 
     const username = usernameInput.value;
-
     usernameError.textContent = "";
     usernameInput.classList.remove("invalid", "valid");
 
@@ -105,7 +104,7 @@ const profilePicInput = document.getElementById("profile-pic");
 const profilePicError = document.getElementById("profile-pic-error");
 const form = document.getElementById("register-form");
 
-// --------------------------- בדיקה כאשר בוחרים קובץ --------------------------- 
+// --------------------------- בדיקה כשבוחרים קובץ --------------------------- 
 profilePicInput.addEventListener("change", function () {
 
     profilePicError.textContent = "";
@@ -113,7 +112,7 @@ profilePicInput.addEventListener("change", function () {
 
     const file = profilePicInput.files[0];
 
-    // אם לא נבחר קובץ - לא מציגים שגיאה כאן
+    // אם לא נבחר קובץ לא תוצג שגיאה - זה מותר
     if (!file)
     {
         return;

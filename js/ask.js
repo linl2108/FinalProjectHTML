@@ -22,7 +22,7 @@ questionForm.addEventListener("submit", function(event){
     titleInput.classList.remove("invalid", "valid");
 
 
-    // בדיקת חובה ואורך
+    // בדיקת דרישות לפרסום השאלה
     if (title === "" || title.length < 10)
     {
         titleError.textContent = "Title is required and must be between 10 to 80 characters.";
@@ -37,12 +37,9 @@ questionForm.addEventListener("submit", function(event){
         return;
     }
 
-
-    // אם תקין
+    // אם הבדיקה עברה בהצלחה
     titleInput.classList.add("valid");
-
     successModal.style.display = "flex";
-
 });
 
 
@@ -51,7 +48,6 @@ questionForm.addEventListener("submit", function(event){
 titleInput.addEventListener("input", function(){
 
     const title = titleInput.value.trim();
-
 
     // אם הייתה שגיאה והמשתמש התחיל לתקן
     if(title.length >= 10 && title.length <= 80)

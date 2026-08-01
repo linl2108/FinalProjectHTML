@@ -1,6 +1,5 @@
 
 // --------------------------- כפתור המשך ---------------------------
-
 const continueBtn = document.getElementById("continue-btn");
 
 continueBtn.addEventListener("click", function ()
@@ -55,7 +54,7 @@ function validateStep1() {
         valid = false;
     }
 
-    // אם אחד השדות לא עבר את בדיקת התקינות
+    // אם אחד השדות לא עבר את בדיקת התקינות/ולידציות
     const fields = [
         fnameInput,
         lnameInput,
@@ -87,7 +86,6 @@ backBtn.addEventListener("click", function ()
 
 
 // --------------------------- בדיקת שליחה של הטופס ---------------------------
-
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
