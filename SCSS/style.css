@@ -872,7 +872,10 @@ footer {
     width:100%;
     overflow-x:auto;
 }
-/*התאמה למובייל לפי הדרישות בתרגיל*/
+
+
+/* ------------------------- התאמת האתר למובייל ------------------------- */
+
 @media (max-width: 1040px) {
 
     /* header */
@@ -990,14 +993,19 @@ footer p:first-child {
     padding:15px;
 }
 
+.admin-table {
+    min-width: 1000px;
+}
+
 .table-wrapper{
     overflow-x:auto;
 }
 
-
 }
 
 
+
+/* ------------------------- התאמת הכפתורים בדף משתמש ------------------------- */
 @media (max-width:339px) {
 
     .profile-buttons {
@@ -1005,13 +1013,11 @@ footer p:first-child {
         gap: 10px;
     }
 
-
     #edit-profile-btn,
     #game-btn {
         flex: 0 0 calc(50% - 5px);
         margin-top:15px;
     }
-
 
     #logout-btn {
         flex: 0 0 120px;
@@ -1019,73 +1025,4 @@ footer p:first-child {
         margin-right:auto;
         margin-top: 2px;
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
