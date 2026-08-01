@@ -117,7 +117,7 @@ header {
 
 .inner-about p {
     text-align: justify;
-    line-height: 1.4;
+    line-height: 1.8;
     font-size: 18px;
     max-width: 900px;
     margin: 0 auto;
@@ -334,7 +334,7 @@ footer {
 
     .copyright {
         font-size: 13px;
-        margin-top: 40px;
+        margin-top: 60px;
     }
 
     .profile-card {

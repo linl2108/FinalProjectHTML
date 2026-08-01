@@ -13,7 +13,13 @@ usernameInput.addEventListener("input", function () {
 
     if (username === "") { return; }
 
-    if (!usernameRegex.test(username))
+    else if (username.toLowerCase().includes("admin"))
+    {
+        usernameError.textContent = "Username cannot contain the word admin.";
+        usernameInput.classList.add("invalid");
+    }
+
+    else if (!usernameRegex.test(username))
     {
         usernameError.textContent = "Username can contain only English letters, numbers and special characters";
         usernameInput.classList.add("invalid");

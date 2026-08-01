@@ -8,6 +8,9 @@
     --light-gray: #cfd1d1;
     --very-light-gray: #e0e2e2c7;
     --light-blue: #569affcb;
+    --blue: #1f6fff;
+    --rgba-dark-gray: rgba(0, 0, 0, .45);
+    --rgba-light-gray: rgba(0, 0, 0, 0.08);
 }
 
 /* --------------------------- כרטיס פרופיל --------------------------- */
@@ -18,7 +21,8 @@
     border-radius: 20px;
     padding: 40px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px var(--rgba-light-gray);
+    max-width: calc(100% - 40px);
 }
 
 .profile-image {
