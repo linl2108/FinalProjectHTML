@@ -68,7 +68,8 @@ header {
 .subtitle {
     color:var(--black);
     font-weight: normal;
-    font-size: 18px;
+    font-size: 17px;
+    margin-left: 2px;
 }
 
 /*תפריט*/
@@ -867,9 +868,12 @@ footer {
 
 
 
-
+.table-wrapper {
+    width:100%;
+    overflow-x:auto;
+}
 /*התאמה למובייל לפי הדרישות בתרגיל*/
-@media (max-width: 800px) {
+@media (max-width: 1040px) {
 
     /* header */
     .nav-container {
@@ -951,6 +955,20 @@ footer {
     margin-top: 40px;
 }
 
+.profile-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.profile-image {
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 footer p {
     line-height: 1.5;
 }
@@ -968,11 +986,41 @@ footer p:first-child {
     display: none;
 }
 
+.admin-card{
+    padding:15px;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
 
 }
 
 
+@media (max-width:339px) {
 
+    .profile-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+    #edit-profile-btn,
+    #game-btn {
+        flex: 0 0 calc(50% - 5px);
+        margin-top:15px;
+    }
+
+
+    #logout-btn {
+        flex: 0 0 120px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 2px;
+    }
+
+}
 
 
 
