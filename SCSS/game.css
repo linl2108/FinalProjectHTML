@@ -1,8 +1,6 @@
 :root {
-    --royal-blue: #423ffdef;
     --white: #ffffff;
     --black: #000000;
-    --red: #ff4d4d;
     --light-red: #ff5500;
     --bordo: #b40000;
     --dark-gray: #8d8d8d;
@@ -81,18 +79,19 @@ body{
 
 .ship-input{
     display:flex;
-    justify-content:space-between;
+    justify-content: center;
     align-items:center;
     margin-bottom:8px;
 }
 
-
-/* -------------------- האינפוט של הכמויות -------------------- */
-
 .ship-input label{
+    margin-right: 8px;
     font-size: 18px;
     line-height:0.8;
 }
+
+
+/* -------------------- האינפוט של הכמויות -------------------- */
 
 .ship-input input{
     width:45px;
@@ -203,7 +202,7 @@ table{
 
 th{
     background: var(--light-blue);
-    color:#000;
+    color: var(--black);
     padding: 12px;
     font-size: 18px;
     border-radius: 10px;
@@ -255,7 +254,198 @@ td{
         transform:translate(-50%,-50%) scale(2);
         opacity:0;
     }
+
 }
 
 
 /* -------------------- התאמה למובייל -------------------- */
+
+@media (max-width:810px){
+
+    body{
+        min-height:100vh;
+        height:100vh;
+        overflow:hidden;
+        align-items:flex-start;
+        padding-top:10px;
+    }
+
+    .container{
+        width:95%;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        gap:5px;
+    }
+
+/* ------------------------- בר הספינות למעלה ------------------------ */
+
+    .ships-left{
+        order:1;
+        width:100%;
+        height:auto;
+    }
+
+    .ships-left table,
+    .ships-left tbody,
+    .ships-left tr{
+        display:flex;
+        width:100%;
+    }
+
+    .ships-left thead{
+        display:none;
+    }
+
+    .ships-left tbody{
+        justify-content:space-around;
+        gap:8px;
+    }
+
+    .ships-left tr{
+        flex-direction:column;
+        align-items:center;
+        flex:1;
+    }
+
+    .ships-left td{
+        width:100%;
+        height:auto;
+        padding:5px;
+        font-size:12px;
+    }
+
+    .ships-left td:first-child{
+        background:transparent;
+        padding-bottom:3px;
+        font-weight:bold;
+    }
+
+    .ships-left td:last-child{
+        background:var(--light-blue);
+        border-radius:12px;
+        font-size:12px;
+        font-weight:bold;
+    }
+
+
+/* ------------------------- לוח המשחק ------------------------ */
+
+    .game-section{
+        order:2;
+        flex:1;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:0;
+        min-height:0;
+    }
+
+
+    .board{
+        grid-template-columns:repeat(var(--size), min(5vw, 30px)) !important;
+        gap:2px;
+        padding:2px;
+        transform: scale(0.65);
+        transform-origin: center;
+    }
+
+    .cell{
+        width: min(5vw, 28px);
+        height: min(5vw, 28px);
+    }
+
+
+/* ------------------------- פאנל הגדרות למטה ------------------------ */
+
+    .settings{
+        order:3;
+        width:100%;
+        padding:10px 15px;
+        border-radius:15px;
+    }
+
+    .settings h2{
+        font-size:10px;
+        margin-bottom:5px;
+    }
+
+    /* BOARD SIZE בשורה */
+    .board-sizes{
+        display:flex;
+        justify-content:center;
+        flex-wrap:nowrap;
+        gap:8px;
+        margin-bottom:10px;
+    }
+
+    .board-sizes label{
+        font-size:12px;
+        gap:3px;
+    }
+
+    /* BATTLESHIPS בשורה */
+    .ship-inputs-container{
+        display:flex;
+        justify-content:center;
+        gap:8px;
+    }
+
+    .ship-input{
+        flex-direction:row;
+        justify-content:center;
+        margin:0;
+    }
+
+    .ship-input label{
+        font-size:12px;
+        margin-right:3px;
+    }
+
+    .ship-input input{
+        width:28px;
+        height:30px;
+        font-size:12px;
+        border-radius:8px;
+    }
+
+    button{
+        margin-top:5px;
+        padding:6px;
+        font-size:12px;
+    }
+
+    #message{
+        display:none;
+    }
+}
+
+/* ------------------------- התאמה למובייל לטאבלטים קטנים ------------------------ */
+
+@media (min-width:464px) and (max-width:520px) {
+
+    .board {
+        transform: scale(0.7);
+        transform-origin: center;
+    }
+}
+
+@media (min-width:370px) and (max-width:463px) {
+
+    .board {
+        transform: scale(0.8);
+        transform-origin: center;
+    }
+}
+
+/* ------------------------- התאמה למובייל לסמארטפונים ------------------------ */
+
+@media (min-width:268px) and (max-width:369px) {
+
+    .board {
+        transform: scale(0.85);
+        transform-origin: center;
+    }
+}

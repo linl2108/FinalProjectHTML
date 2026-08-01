@@ -46,10 +46,10 @@
                 <form id="login-form" class="form">
                     <label>Username:
                         <input id="login-username" type="text" name="username" required placeholder="type here..."">
-            </label>
+                    </label>
 
-            <label>Password:
-                <div class=" password-container">
+                    <label>Password:
+                    <div class=" password-container">
                         <input id="password" type="password" name="password" required placeholder="type here...">
                         <!-- עין פתוחה -->
                         <svg id="eye-open" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="22"
@@ -58,9 +58,7 @@
 
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
-
                         </svg>
-
 
                         <!-- עין עם קו -->
                         <svg id="eye-closed" class="toggle-password" xmlns="http://www.w3.org/2000/svg" width="18"
@@ -75,17 +73,14 @@
                             <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
 
                             <line x1="1" y1="1" x2="23" y2="23"></line>
-
                         </svg>
-
+                    </div>
+                    <div id="login-error" class="error"></div>
+                </label>
+                <button type="submit" class="login-btn">Log In</button>
             </div>
-            <div id="login-error" class="error"></div>
-            </label>
-
-            <button type="submit" class="login-btn">Log In</button>
-        </div>
         </form>
-        </div>
+    </div>
     </main>
 
     <footer id="form-section" class="copyright">

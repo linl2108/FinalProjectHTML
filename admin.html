@@ -10,7 +10,6 @@
 </head>
 
 <body id="top">
-
     <header>
         <div class="nav-container">
             <div class="logo">Ask<span>Hub</span></div>
@@ -36,6 +35,8 @@
 
     <main class="container">
         <h1 class="site-title">Hey Admin, welcome back!</h1>
+        
+        <!--טבלת משתמשים למנהל/אדמין-->
         <div class="white-bubble admin-card">
             <div class="table-wrapper">
             <table id="users-table" class="admin-table">
@@ -57,7 +58,7 @@
     </main>
 
 
-    <!-- --------------------------- Edit Profile Modal --------------------------- -->
+    <!-- --------------------------- Edit Profile Modal - טופס צף ------------------------------>
 
     <div id="edit-profile-modal" class="modal">
 
@@ -68,15 +69,8 @@
             <h2>Edit Profile</h2>
 
             <div class="modal-steps">
-
-                <button id="account-tab" class="active-tab" type="button">
-                    Edit Account Info
-                </button>
-
-                <button id="personal-tab" type="button">
-                    Edit Personal Details
-                </button>
-
+                <button id="account-tab" class="active-tab" type="button">Edit Account Info</button>
+                <button id="personal-tab" type="button">Edit Personal Details</button>
             </div>
 
 
@@ -84,26 +78,22 @@
 
             <div id="account-section">
 
-                <label>
-                    Username
+                <label>Username
                     <input type="text" id="username">
                     <span id="username-error" class="error"></span>
                 </label>
 
-                <label>
-                    Profile Picture
+                <label>Profile Picture
                     <input type="file" id="profile-pic">
                     <span id="profile-pic-error" class="error"></span>
                 </label>
 
-                <label>
-                    Email
+                <label>Email
                     <input type="email" id="mail">
                     <span id="mail-error" class="error"></span>
                 </label>
 
-                <label>
-                    Password
+                <label>Password
                     <div class="password-container">
                     <input type="password" id="password">
                     <!-- עין פתוחה -->
@@ -113,7 +103,6 @@
 
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                         <circle cx="12" cy="12" r="3"></circle>
-
                     </svg>
 
 
@@ -130,15 +119,13 @@
                         <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
 
                         <line x1="1" y1="1" x2="23" y2="23"></line>
-
                     </svg>
 
             </div>
             <span id="password-error" class="error"></span>
             </label>
 
-            <label>
-                Confirm Password
+            <label>Confirm Password
                 <input type="password" id="confirm-password">
                 <span id="confirm-password-error" class="error"></span>
             </label>
@@ -150,39 +137,33 @@
 
         <div id="personal-section" style="display:none;">
 
-            <label>
-                First Name
+            <label>First Name
                 <input type="text" id="fname">
                 <span id="fname-error" class="error"></span>
             </label>
 
-            <label>
-                Last Name
+            <label>Last Name
                 <input type="text" id="lname">
                 <span id="lname-error" class="error"></span>
             </label>
 
-            <label>
-                Birth Date
+            <label>Birth Date
                 <input type="date" id="bday">
                 <span id="bday-error" class="error"></span>
             </label>
 
-            <label>
-                City
+            <label>City
                 <input type="text" id="city" list="cities-list">
                 <datalist id="cities-list"></datalist>
                 <span id="city-error" class="error"></span>
             </label>
 
-            <label>
-                Street
+            <label>Street
                 <input type="text" id="street">
                 <span id="street-error" class="error"></span>
             </label>
 
-            <label>
-                Street Number
+            <label>Street Number
                 <input type="number" id="street-no">
                 <span id="street-no-error" class="error"></span>
             </label>
@@ -190,39 +171,24 @@
         </div>
 
         <div class="modal-buttons">
-
-            <button id="cancel-edit" type="button">
-                Cancel
-            </button>
-
-            <button id="save-edit" type="button">
-                Save Changes
-            </button>
-
+            <button id="cancel-edit" type="button">Cancel</button>
+            <button id="save-edit" type="button">Save Changes</button>
         </div>
 
     </div>
 
     </div>
 
-    <!-- Delete User Modal -->
+    <!-- Delete User Modal - טופס צף למחיקת משתמש עם אישור של המחיקה -->
 
     <div id="delete-modal" class="modal">
 
         <div class="delete-modal-content">
-
             <h3>Are you sure you want to delete this user?</h3>
 
             <div class="delete-buttons">
-
-                <button id="confirm-delete" type="button">
-                    Yes
-                </button>
-
-                <button id="cancel-delete" type="button">
-                    No
-                </button>
-
+                <button id="confirm-delete" type="button">Yes</button>
+                <button id="cancel-delete" type="button">No</button>
             </div>
 
         </div>

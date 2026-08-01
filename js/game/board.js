@@ -5,7 +5,8 @@ const boomSound = document.getElementById("boomSound");
 
 function createBoardUI(boardSize, onCellClick) {
     boardElement.innerHTML = "";
-    boardElement.style.gridTemplateColumns = `repeat(${boardSize}, 42px)`;
+boardElement.style.setProperty("--size", boardSize);
+boardElement.style.gridTemplateColumns = `repeat(${boardSize}, 42px)`;
     boardElement.classList.remove("hidden");
 
     for (let r = 0; r < boardSize; r++) {

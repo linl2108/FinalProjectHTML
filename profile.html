@@ -39,19 +39,12 @@
         <div class="white-bubble profile-card">
 
             <img id="profile-image" class="profile-image">
-
             <h2 id="profile-name"></h2>
-
             <p id="profile-username" class="profile-username"></p>
-
             <p id="profile-email"></p>
-
             <p id="profile-bday"></p>
-
             <p id="profile-address"></p>
-
             <p id="numOfAdvice">Advices given: </p>
-
             <p id="numOfQues">Questions asked: </p>
 
             <div class="profile-buttons">
@@ -59,13 +52,11 @@
                 <button id="game-btn" type="button"">Game</button>
                 <button id="logout-btn" type="button">Logout</button>
             </div>
-
         </div>
-
     </main>
 
 
-    <!-- --------------------------- Edit Profile Modal --------------------------- -->
+    <!-- --------------------------- Edit Profile Modal - טופס צף לעריכת משתמש --------------------------- -->
 
     <div id="edit-profile-modal" class="modal">
 
@@ -76,15 +67,8 @@
             <h2>Edit Profile</h2>
 
             <div class="modal-steps">
-
-                <button id="account-tab" class="active-tab" type="button">
-                    Edit Account Info
-                </button>
-
-                <button id="personal-tab" type="button">
-                    Edit Personal Details
-                </button>
-
+                <button id="account-tab" class="active-tab" type="button">Edit Account Info</button>
+                <button id="personal-tab" type="button">Edit Personal Details</button>
             </div>
 
 
@@ -92,26 +76,22 @@
 
             <div id="account-section">
 
-                <label>
-                    Username
+                <label>Username
                     <input type="text" id="username">
                     <span id="username-error" class="error"></span>
                 </label>
 
-                <label>
-                    Profile Picture
+                <label>Profile Picture
                     <input type="file" id="profile-pic">
                     <span id="profile-pic-error" class="error"></span>
                 </label>
 
-                <label>
-                    Email
+                <label>Email
                     <input type="email" id="mail">
                     <span id="mail-error" class="error"></span>
                 </label>
 
-                <label>
-                    Password
+                <label>Password
                     <div class="password-container">
                         <input type="password" id="password">
                         <!-- עין פתוחה -->
@@ -121,7 +101,6 @@
 
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
-
                         </svg>
 
 
@@ -138,15 +117,13 @@
                             <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"></path>
 
                             <line x1="1" y1="1" x2="23" y2="23"></line>
-
                         </svg>
 
                     </div>
                     <span id="password-error" class="error"></span>
                 </label>
 
-                <label>
-                    Confirm Password
+                <label>Confirm Password
                     <input type="password" id="confirm-password">
                     <span id="confirm-password-error" class="error"></span>
                 </label>
@@ -158,39 +135,33 @@
 
             <div id="personal-section" style="display:none;">
 
-                <label>
-                    First Name
+                <label>First Name
                     <input type="text" id="fname">
                     <span id="fname-error" class="error"></span>
                 </label>
 
-                <label>
-                    Last Name
+                <label>Last Name
                     <input type="text" id="lname">
                     <span id="lname-error" class="error"></span>
                 </label>
 
-                <label>
-                    Birth Date
+                <label>Birth Date
                     <input type="date" id="bday">
                     <span id="bday-error" class="error"></span>
                 </label>
 
-                <label>
-                    City
+                <label>City
                     <input type="text" id="city" list="cities-list">
                     <datalist id="cities-list"></datalist>
                     <span id="city-error" class="error"></span>
                 </label>
 
-                <label>
-                    Street
+                <label>Street
                     <input type="text" id="street">
                     <span id="street-error" class="error"></span>
                 </label>
 
-                <label>
-                    Street Number
+                <label>Street Number
                     <input type="number" id="street-no">
                     <span id="street-no-error" class="error"></span>
                 </label>
@@ -198,15 +169,9 @@
             </div>
 
             <div class="modal-buttons">
-                <button id="cancel-edit" type="button">
-                    Cancel
-                </button>
-
-                <button id="save-edit" type="button">
-                    Save Changes
-                </button>
+                <button id="cancel-edit" type="button">Cancel</button>
+                <button id="save-edit" type="button">Save Changes</button>
             </div>
-
         </div>
     </div>
 
