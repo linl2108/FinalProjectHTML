@@ -263,8 +263,8 @@ td{
 @media (max-width:810px){
 
     body{
-        min-height:100vh;
-        height:100vh;
+        min-height:100dvh;
+        height:100dvh;
         overflow:hidden;
         align-items:flex-start;
         padding-top:10px;
@@ -272,7 +272,7 @@ td{
 
     .container{
         width:95%;
-        height:100vh;
+        height:100dvh;
         display:flex;
         flex-direction:column;
         justify-content:space-between;
