@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", function () {
 // --------------------------- תפריט לפי משתמש מחובר ---------------------------
 
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
@@ -75,3 +75,4 @@ if (askLink) {
 }
 
 document.body.classList.add("nav-ready");
+});
