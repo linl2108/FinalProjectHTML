@@ -2,6 +2,7 @@
 // --------------------------- התחברות ---------------------------
 const loginForm = document.getElementById("login-form");
 
+// אם נלחץ הגש טופס/שלח טופס - במקרה זה זה לוגין
 loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();

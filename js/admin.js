@@ -101,6 +101,7 @@ function deleteUser(index) {
     deleteModal.style.display = "flex";
 }
 
+
 // --------------------------- אישור מחיקה ---------------------------
 
 document.getElementById("confirm-delete").addEventListener("click", function () {

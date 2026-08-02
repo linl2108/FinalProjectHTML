@@ -9,7 +9,7 @@ function createBoardUI(boardSize, onCellClick) {
     // מנקה לוח קיים
     boardElement.innerHTML = "";
 
-    // גודל הלוח אשמור כמשתנה כדי להשתמש בו ב-css
+    // גודל הלוח אשמור כמשתנה כדי להשתמש בו בסיאסאס
     boardElement.style.setProperty("--size", boardSize);
     boardElement.style.gridTemplateColumns = `repeat(${boardSize}, 42px)`;
 
@@ -41,7 +41,7 @@ function triggerBoom() {
     boomElement.classList.remove("hidden");
     if (boomSound) {
         boomSound.currentTime = 0;
-        boomSound.play().catch(() => {}); // התעלמות מהגבלות autoplay של בדפדפן
+        boomSound.play().catch(() => {}); // התעלמות מהגבלות אווטופליי של הדפדדפן
     }
      // לאחר 800 מילשניות האנימציה תרד/תוסתר
     setTimeout(() => {

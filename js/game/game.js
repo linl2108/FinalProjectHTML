@@ -44,7 +44,7 @@ for (let i = 0; i < shipInputs.length; i++) {
 
 // איזה גודל לוח המשתמש בחר
 function getSelectedBoardSize() {
-    let checked = document.querySelector("input[name='boardSize']:checked"); //מחפש תגית מסומנת
+    let checked = document.querySelector("input[name='boardSize']:checked"); // מחפש תגית מסומנת
     if (checked) {
         return Number(checked.value);
     } else {
@@ -52,6 +52,7 @@ function getSelectedBoardSize() {
     }
 }
 
+// בודקת שינוי בכמות ספינות באינפוט
 function validateSingleInput(changedInput) {
     let size = getSelectedBoardSize();
     if (!size) return;
@@ -72,6 +73,7 @@ function validateSingleInput(changedInput) {
     }
 }
 
+// בדיקת כמות ספינות כאשר גודל הלוח השתנה (אם לא מתאים אז מאפסים)
 function validateAllInputs() {
     let size = getSelectedBoardSize();
     if (!size) return;
@@ -94,6 +96,7 @@ function validateAllInputs() {
     }
 }
 
+// אם נלחץ כפתור התחל משחק
 startBtn.addEventListener("click", function() {
     let boardSize = getSelectedBoardSize();
     if (!boardSize) {
@@ -138,6 +141,7 @@ startBtn.addEventListener("click", function() {
     messageEl.textContent = "";
 });
 
+// מה קורה כשהמשתמש/שחקן לוחץ על תא
 function handleCellClick(row, col, cellElement) {
     if (!gameActive) return;
     if (cellElement.classList.contains("hit") || cellElement.classList.contains("miss")) return;
@@ -163,11 +167,11 @@ function handleCellClick(row, col, cellElement) {
                 triggerBoom();
             }
         }
-
         checkWinState();
     }
 }
 
+// בדיקת האם יש ניצחון במשחק
 function checkWinState() {
     // שימוש בפליטר לבדיקת ספינות שעוד לא הוטבעו
     let activeShips = gameShips.filter(function(s) {
@@ -193,6 +197,7 @@ function checkWinState() {
     }
 }
 
+// אם נלחץ כפתור ריסט
 resetBtn.addEventListener("click", function() {
     gameActive = false;
 
@@ -210,7 +215,7 @@ resetBtn.addEventListener("click", function() {
     startBtn.style.display = "block";
     resetBtn.style.display = "none";
     messageEl.textContent = "";
-
+    
     let numberInputs = document.querySelectorAll("input[type='number']");
     for (let i = 0; i < numberInputs.length; i++) {
         numberInputs[i].value = 0;

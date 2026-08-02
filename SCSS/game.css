@@ -6,6 +6,7 @@
     --dark-gray: #8d8d8d;
     --gray: rgba(0, 0, 0, .3);
     --light-blue: #86b4f8;
+    --blue: #5dbef7;
     --baby-blue: #e5f1fc;
     --yellow: yellow;
     --orange: orange;
@@ -30,7 +31,6 @@ body {
 
 
 /* -------------------- הבועה שמכילה את הכפתורים והבחירות -------------------- */
-
 .container {
     width: 95%;
     max-width: 1400px;
@@ -59,9 +59,7 @@ body {
     letter-spacing: 2px;
 }
 
-
 /* -------------------- הגדרות לבחירה -------------------- */
-
 .board-sizes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -90,9 +88,7 @@ body {
     line-height: 0.8;
 }
 
-
 /* -------------------- האינפוט של הכמויות -------------------- */
-
 .ship-input input {
     width: 45px;
     height: 50px;
@@ -105,9 +101,7 @@ body {
     outline: none;
 }
 
-
 /*-------------------- כפתורים -------------------- */
-
 button {
     width: 100%;
     margin-top: 10px;
@@ -123,14 +117,11 @@ button {
 }
 
 /* -------------------- אפקטים לכפתורים -------------------- */
-
 button:hover {
     transform: scale(1.04);
 }
 
-
 /* -------------------- הודעת שגיאה -------------------- */
-
 #message {
     margin-top: 10px;
     text-align: center;
@@ -145,9 +136,7 @@ button:hover {
     justify-content: center;
 }
 
-
 /* -------------------- לוח המשחק -------------------- */
-
 .game-section {
     flex: 1;
     display: flex;
@@ -177,7 +166,7 @@ button:hover {
 }
 
 .cell.miss {
-    background: #5dbef7;
+    background: var(--blue);
 }
 
 .cell.hit {
@@ -193,13 +182,11 @@ button:hover {
 
 
 /* -------------------- בר ההתקדמות במשחק -------------------- */
-
 table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 1 8px;
     table-layout: fixed;
-    /* שומר על רוחב עמודות קבוע ולא מזיז אותן לפי אורך הטקסט */
 }
 
 th {
@@ -209,7 +196,6 @@ th {
     font-size: 18px;
     border-radius: 10px;
     height: 45px;
-    /* גובה קבוע לכותרת */
 }
 
 td {
@@ -219,7 +205,6 @@ td {
     font-size: 16px;
     border-radius: 10px;
     height: 45px;
-    /* גובה קבוע לשורות */
 }
 
 .hidden {
@@ -244,31 +229,24 @@ td {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-
-    background: white;
+    background: var(--white);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-
+    box-shadow: 0 10px 30px var(--gray);
     transition: 0.4s ease;
     z-index: 2000;
 }
-
 
 .win-message.show {
     transform: translate(-50%, -50%) scale(1);
 }
 
-
 .win-message h1 {
     font-size: 35px;
 }
 
-
 /* -------------------- אנימציית בום -------------------- */
-
 @keyframes boomAnimation {
 
     0% {
@@ -285,12 +263,9 @@ td {
         transform: translate(-50%, -50%) scale(2);
         opacity: 0;
     }
-
 }
 
-
 /* -------------------- התאמה למובייל -------------------- */
-
 @media (max-width:810px) {
 
     body {
@@ -311,7 +286,6 @@ td {
     }
 
     /* ------------------------- בר הספינות למעלה ------------------------ */
-
     .ships-left {
         order: 1;
         width: 100%;
@@ -362,7 +336,6 @@ td {
 
 
     /* ------------------------- לוח המשחק ------------------------ */
-
     .game-section {
         order: 2;
         flex: 1;
@@ -373,7 +346,6 @@ td {
         padding: 0;
         min-height: 0;
     }
-
 
     .board {
         grid-template-columns: repeat(var(--size), min(5vw, 30px)) !important;
@@ -390,7 +362,6 @@ td {
 
 
     /* ------------------------- פאנל הגדרות למטה ------------------------ */
-
     .settings {
         order: 3;
         width: 100%;
@@ -453,8 +424,10 @@ td {
     }
 }
 
-/* ------------------------- התאמה למובייל לטאבלטים קטנים ------------------------ */
 
+/* הסבר למה עשיתי כמה מדיה קארי ללוח: בגלל שגודל הלוח עלול להיות
+גדול/קטן מדי בכל רוחב, העדפתי להתאים ל"קבוצות" של מכשירים */
+/* ------------------------- התאמה למובייל לטאבלטים קטנים ------------------------ */
 @media (min-width:464px) and (max-width:520px) {
 
     .board {
@@ -472,7 +445,6 @@ td {
 }
 
 /* ------------------------- התאמה למובייל לסמארטפונים ------------------------ */
-
 @media (min-width:259px) and (max-width:369px) {
 
     .board {

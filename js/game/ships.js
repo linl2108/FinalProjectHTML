@@ -8,8 +8,8 @@ function canPlaceShip(grid, row, col, size, direction, boardSize) {
                 if (grid[r][c] !== -1) return false;
             }
         }
-    } 
-    
+    }
+    // על אותו עיקרון רק עם שורות
     else {
         if (row + size > boardSize) return false;
         for (let r = Math.max(0, row - 1); r <= Math.min(boardSize - 1, row + size); r++) {
@@ -22,6 +22,8 @@ function canPlaceShip(grid, row, col, size, direction, boardSize) {
 }
 
 // אלגוריתם הצבה על לוח דמה שבודק אם כמות הספינות נכנסת בלוח
+// הסבר: אני יוצרת מערך דו ממדי. "דמה" - כדי שקודם נבדוק אם בכלל אפשר להציב את הכמות שנבחרה בלוח שנבחר
+// הערה: כל פעם זה ייתן למשל להכניס 16 ספינות או מנגד 15 ספינות, זה תלוי בצורת ההצבה שלהן בלוח
 function simulatePlacement(shipCounts, boardSize) {
     let grid = Array.from({ length: boardSize }, () => Array(boardSize).fill(-1));
     let shipList = [];
@@ -40,7 +42,6 @@ function simulatePlacement(shipCounts, boardSize) {
 
         while (!placed && attempts < maxAttempts) {
             attempts++;
-
             // בחירת כיוון
             let direction = 'vertical';
             if (Math.random() < 0.5) {
@@ -62,7 +63,6 @@ function simulatePlacement(shipCounts, boardSize) {
                 placed = true;
             }
         }
-
         if (!placed) return false; // לא נכנס בלוח
     }
     return true;
@@ -118,7 +118,7 @@ function generateShipPositions(shipCounts, boardSize) {
                     placed = true;
                 }
             }
-            if (!placed) return null; // כשל נדיר בהצבה
+            if (!placed) return null; // לא נכנס בלוח
         }
     }
     return { grid: grid, ships: ships };

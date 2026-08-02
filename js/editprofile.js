@@ -4,7 +4,7 @@
 const editBtn = document.getElementById("edit-profile-btn");
 const modal = document.getElementById("edit-profile-modal");
 
-
+// --------------------------- מילוי הטופס ------------------------------
 function fillForm() {
 
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
@@ -63,7 +63,6 @@ if (closeBtn) {
     });
 }
 
-
 if (cancelBtn) {
 
     cancelBtn.addEventListener("click", function () {
@@ -72,7 +71,6 @@ if (cancelBtn) {
 
     });
 }
-
 
 // --------------------------- סגירה בלחיצה על הרקע ---------------------------
 
@@ -92,7 +90,7 @@ const editPersonalTab = document.getElementById("personal-tab");
 const editAccountSection = document.getElementById("account-section");
 const editPersonalSection = document.getElementById("personal-section");
 
-
+// אם נלחץ שלב פרטי משתמש
 editAccountTab.addEventListener("click", function () {
 
     editAccountSection.style.display = "block";
@@ -102,7 +100,7 @@ editAccountTab.addEventListener("click", function () {
     editPersonalTab.classList.remove("active-tab");
 });
 
-
+// אם נלחץ שלב פרטים אישיים
 editPersonalTab.addEventListener("click", function () {
 
     editAccountSection.style.display = "none";
@@ -112,8 +110,9 @@ editPersonalTab.addEventListener("click", function () {
     editAccountTab.classList.remove("active-tab");
 });
 
+// כפתור סייב/שמור
 const saveBtn = document.getElementById("save-edit");
-
+// אם נלחץ
 saveBtn.addEventListener("click", function () {
 
     let valid = true;
@@ -154,7 +153,7 @@ saveBtn.addEventListener("click", function () {
     }
 });
 
-
+// פונקציה שמעדכנת את הפרטים של המשתמש
 function updateUser() {
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -201,7 +200,7 @@ function updateUser() {
         });
     }
 
-
+    // תמונת פרופיל - הדפדפן לא ישמור את התמונה שהמשתמש העלה (לכן גם בודליציות לא תהיה שגיאה אם לא ישנה אותה)
     const image = document.getElementById("profile-pic").files[0];
 
     if (image) {
@@ -211,7 +210,8 @@ function updateUser() {
         reader.onload = function () {
 
             updatedUser.profilePic = reader.result;
-
+            
+            // איך אדמין יודע באיזה משתמש מדובר
             users[index] = updatedUser;
 
             localStorage.setItem("users", JSON.stringify(users));

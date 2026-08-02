@@ -12,18 +12,21 @@ usernameInput.addEventListener("input", function () {
 
     if (username === "") { return; }
 
+    // אי אפשר לשנות שם משתמש למשהו שמכיל אדמין
     else if (username.toLowerCase().includes("admin"))
     {
         usernameError.textContent = "Username cannot contain the word admin.";
         usernameInput.classList.add("invalid");
     }
-
+    
+    // אם לא עומד בדרישות
     else if (!usernameRegex.test(username))
     {
         usernameError.textContent = "Username can contain only English letters, numbers and special characters";
         usernameInput.classList.add("invalid");
     }
 
+    // אם כבר קיים במערכת
     else if (usernameExists(username))
     {
         usernameError.textContent = "This username is already exists in the system.";
@@ -112,7 +115,7 @@ profilePicInput.addEventListener("change", function () {
 
     const file = profilePicInput.files[0];
 
-    // אם לא נבחר קובץ לא תוצג שגיאה - זה מותר
+    // אם לא נבחר קובץ לא תוצג שגיאה - זה מותר כי אני מסתמכת על התמונה שיש כרגע למשתמש
     if (!file)
     {
         return;

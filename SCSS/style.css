@@ -104,7 +104,6 @@ header {
 }
 
 /* --------------------------- אודות --------------------------- */
-
 .about-strip {
     background-color: var(--white);
     padding: 10px 20px;
@@ -202,8 +201,7 @@ header {
     text-align: center;
 }
 
-/* --------------------------- החלק התחתון של האתר ---------------------------- */
-
+/* --------------------------- החלק התחתון של האתר - footer ---------------------------- */
 footer {
     background-color: var(--royal-blue);
     padding: 5px 5px;
@@ -246,7 +244,7 @@ footer {
 /* ------------------------- התאמת האתר למובייל ------------------------- */
 @media (max-width: 1040px) {
 
-    /* header */
+    /* --------------------- header --------------------- */
     .nav-container {
         display: flex;
         align-items: center;
@@ -277,7 +275,7 @@ footer {
         order: 1;
     }
 
-    /*תפריט צד*/
+    /* ------------------------- תפריט צד ------------------------ */
     .menu {
         position: fixed;
         top: 0;
@@ -307,6 +305,7 @@ footer {
         display: none;
     }
 
+    /* ---------------- שכבת התוכן של האתר (דף הבית) --------------- */
     .grid-layout {
         grid-template-columns: 1fr;
     }
@@ -331,12 +330,8 @@ footer {
     .form-content {
         padding: 15px;
     }
-
-    .copyright {
-        font-size: 13px;
-        margin-top: 60px;
-    }
-
+    
+    /* ------------------ פרופיל משתמש ---------------- */
     .profile-card {
         width: 100%;
         max-width: 100%;
@@ -347,8 +342,15 @@ footer {
         max-width: 100%;
     }
 
+    /* ------------------- בודי --------------- */
     body {
         overflow-x: hidden;
+    }
+
+    /* ----------------------- חלק תחתון ---------------------- */
+    .copyright {
+        font-size: 13px;
+        margin-top: 60px;
     }
 
     footer p {
@@ -369,6 +371,7 @@ footer {
         display: none;
     }
 
+    /* ---------------------- אדמין ----------------------- */
     .admin-card {
         padding: 15px;
     }
