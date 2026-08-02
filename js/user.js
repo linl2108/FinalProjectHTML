@@ -1,3 +1,43 @@
+// --------------------------- יצירת 2 משתמשים מוכנים ---------------------------
+function createDefaultUsers() {
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    // אם אין משתמשים במערכת
+    if (users.length === 0) {
+        users = [
+            {
+                username: "prettywatermelon123",
+                password: "User123!",
+                profilePic: "images/rachel.jpg",
+                fname: "Rachel",
+                lname: "Green",
+                mail: "rachelgreen@yahoo.com",
+                bday: "1989-01-12",
+                city: "חדרה",
+                street: "ירושלים",
+                streetNo: "1"
+            },
+            {
+                username: "prettymelon123",
+                password: "User123!",
+                profilePic: "images/ross.jpg",
+                fname: "Ross",
+                lname: "Geller",
+                mail: "rossgeller@yahoo.com",
+                bday: "1989-03-03",
+                city: "חדרה",
+                street: "השלום",
+                streetNo: "2"
+            }
+        ];
+
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+}
+
+// הפעלה של יצירת משתמשים מוכנים
+createDefaultUsers();
+
 
 // --------------------------- אובייקט משתמש ---------------------------
 class User {
