@@ -7,7 +7,7 @@ function createDefaultUsers() {
         users = [
             {
                 username: "prettywatermelon123",
-                password: "User123!",
+                password: "Rachel123!",
                 profilePic: "images/rachel.jpg",
                 fname: "Rachel",
                 lname: "Green",
@@ -19,7 +19,7 @@ function createDefaultUsers() {
             },
             {
                 username: "prettymelon123",
-                password: "User123!",
+                password: "Ross123!",
                 profilePic: "images/ross.jpg",
                 fname: "Ross",
                 lname: "Geller",
