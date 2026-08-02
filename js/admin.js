@@ -69,25 +69,15 @@ function editUser(index) {
     const user = users[index];
 
     document.getElementById("username").value = user.username;
-
     document.getElementById("mail").value = user.mail;
-
     document.getElementById("password").value = user.password;
-
     document.getElementById("confirm-password").value = user.password;
-
     document.getElementById("fname").value = user.fname;
-
     document.getElementById("lname").value = user.lname;
-
     document.getElementById("bday").value = user.bday;
-
     document.getElementById("city").value = user.city;
-
     document.getElementById("street").value = user.street;
-
     document.getElementById("street-no").value = user.streetNo;
-
     editModal.style.display = "flex";
 
     document.getElementById("username").dispatchEvent(new Event("input"));
@@ -102,7 +92,6 @@ function editUser(index) {
     document.getElementById("street-no").dispatchEvent(new Event("input"));
 }
 
-
 // --------------------------- פתיחת חלון מחיקה ---------------------------
 
 function deleteUser(index) {
@@ -110,9 +99,7 @@ function deleteUser(index) {
     deleteUserIndex = index;
 
     deleteModal.style.display = "flex";
-
 }
-
 
 // --------------------------- אישור מחיקה ---------------------------
 

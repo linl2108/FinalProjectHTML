@@ -3,10 +3,10 @@ const winSound = document.getElementById("winSound");
 const winMessage = document.getElementById("winMessage");
 
 let gameActive = false;
-let gameGrid = [];
-let gameShips = [];
-let remainingShipsCount = { 2: 0, 3: 0, 4: 0, 5: 0 };
-let previousValidInputs = { ship2: 0, ship3: 0, ship4: 0, ship5: 0 };
+let gameGrid = []; // מצב הלוח
+let gameShips = []; // מידע על הספינות
+let remainingShipsCount = { 2: 0, 3: 0, 4: 0, 5: 0 }; // כמות שנשארה
+let previousValidInputs = { ship2: 0, ship3: 0, ship4: 0, ship5: 0 }; // כמות אחרונה
 
 let startBtn = document.getElementById("start-btn");
 let resetBtn = document.getElementById("reset-btn");
@@ -26,7 +26,7 @@ resetBtn.style.display = "none";
 let radioButtons = document.querySelectorAll("input[name='boardSize']");
 for (let i = 0; i < radioButtons.length; i++) {
     radioButtons[i].addEventListener("change", function() {
-        validateAllInputs();
+        validateAllInputs(); //בדיקה של הכמות האם מתאימה
     });
 }
 
@@ -42,8 +42,9 @@ for (let i = 0; i < shipInputs.length; i++) {
     });
 }
 
+// איזה גודל לוח המשתמש בחר
 function getSelectedBoardSize() {
-    let checked = document.querySelector("input[name='boardSize']:checked");
+    let checked = document.querySelector("input[name='boardSize']:checked"); //מחפש תגית מסומנת
     if (checked) {
         return Number(checked.value);
     } else {
@@ -168,7 +169,7 @@ function handleCellClick(row, col, cellElement) {
 }
 
 function checkWinState() {
-    // שימוש ב-filter לבדיקת ספינות שעוד לא הוטבעו
+    // שימוש בפליטר לבדיקת ספינות שעוד לא הוטבעו
     let activeShips = gameShips.filter(function(s) {
         return s.hits < s.size;
     });

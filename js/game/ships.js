@@ -2,8 +2,8 @@
 // בדיקה האם ניתן להציב ספינה במיקום מסוים כולל מרווח של משבצת
 function canPlaceShip(grid, row, col, size, direction, boardSize) {
     if (direction === 'horizontal') {
-        if (col + size > boardSize) return false;
-        for (let r = Math.max(0, row - 1); r <= Math.min(boardSize - 1, row + 1); r++) {
+        if (col + size > boardSize) return false; // גדול מדי
+        for (let r = Math.max(0, row - 1); r <= Math.min(boardSize - 1, row + 1); r++) { // 
             for (let c = Math.max(0, col - 1); c <= Math.min(boardSize - 1, col + size); c++) {
                 if (grid[r][c] !== -1) return false;
             }
